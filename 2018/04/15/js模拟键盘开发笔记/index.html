@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="js模拟键盘开发笔记(一). 实现方式一. 页面显示整体: 一个 ul 列表. 每个 li 是键盘上一个键键盘分类-三种:
+可以 shift 的(如 1 和 ! 等数字符号键)
+字母键
+功能键(回车, 空格, 退格, capslock 等)
+
+键盘布局方式可以使用浮动或 flex, 设定总体宽度, ">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/15/js模拟键盘开发笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-15T12:53:20.904Z">
+          2018-04-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js模拟键盘开发笔记"><a href="#js模拟键盘开发笔记" class="headerlink" title="js模拟键盘开发笔记"></a>js模拟键盘开发笔记</h1><h2 id="一-实现方式"><a href="#一-实现方式" class="headerlink" title="(一). 实现方式"></a>(一). 实现方式</h2><h3 id="一-页面显示"><a href="#一-页面显示" class="headerlink" title="一. 页面显示"></a>一. 页面显示</h3><h4 id="整体-一个-ul-列表-每个-li-是键盘上一个键"><a href="#整体-一个-ul-列表-每个-li-是键盘上一个键" class="headerlink" title="整体: 一个 ul 列表. 每个 li 是键盘上一个键"></a>整体: 一个 <code>ul</code> 列表. 每个 <code>li</code> 是键盘上一个键</h4><h4 id="键盘分类-三种"><a href="#键盘分类-三种" class="headerlink" title="键盘分类-三种:"></a>键盘分类-三种:</h4><ol>
+<li>可以 <code>shift</code> 的(如 <code>1</code> 和 <code>!</code> 等数字符号键)</li>
+<li>字母键</li>
+<li>功能键(回车, 空格, 退格, <code>capslock</code> 等)</li>
+</ol>
+<h4 id="键盘布局方式"><a href="#键盘布局方式" class="headerlink" title="键盘布局方式"></a>键盘布局方式</h4><p>可以使用浮动或 <code>flex</code>, 设定总体宽度, 然后单独设定特殊长度的键宽度, 元素自动换行.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"keyboard"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"delete lastitem"</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"tab"</span>&gt;</span>tab<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"letter"</span>&gt;</span>q<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"capslock"</span>&gt;</span>caps lock<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"return lastitem"</span>&gt;</span>return<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"left-shift"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"right-shift lastitem"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"space lastitem"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="二-js-功能"><a href="#二-js-功能" class="headerlink" title="二. js 功能"></a>二. js 功能</h3><p>js 功能分为: </p>
+<ul>
+<li>设置事件监听(键盘点击, 文本框焦点)</li>
+<li>特殊功能键的实现: <code>CapsLock</code> , <code>Shift</code> - 恢复 <code>Shift</code> , <code>delete</code> (退格), <code>Space</code> (空格)</li>
+<li>字母-大写字母, 数字-特殊符号向表单文本框回写<h4 id="1-Caps-Lock-功能实现"><a href="#1-Caps-Lock-功能实现" class="headerlink" title="1. Caps Lock 功能实现"></a>1. <code>Caps Lock</code> 功能实现</h4>css 字母键增加一个大写类<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.uppercase</span> &#123;<span class="attribute">text-transform</span>: uppercase;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>js 切换<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.letter'</span>).toggleClass(<span class="string">'uppercase'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-shift-键功能实现"><a href="#2-shift-键功能实现" class="headerlink" title="2. shift 键功能实现"></a>2. <code>shift</code> 键功能实现</h4><ul>
+<li>实现大写功能-键盘显示大写字母(见上一条)</li>
+<li>实现上档功能-键盘显示数字键代表的符号等  </li>
+</ul>
+<p>html代码:<br><figure class="highlight xhtml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css 代码:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.on</span> &#123;<span class="attribute">display</span>: none;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.symbol span'</span>).toggle();</span><br></pre></td></tr></table></figure>
+<p>补充说明:<br><code>toggle()</code> 是 <code>jQuery</code>函数, 切换显示和隐藏.</p>
+<h4 id="3-delete-退格-实现"><a href="#3-delete-退格-实现" class="headerlink" title="3. delete (退格) 实现"></a>3. <code>delete</code> (退格) 实现</h4><ul>
+<li>获取文本框内容</li>
+<li>substr截取: <code>html.substr(0, html.length - 1)</code></li>
+<li>回写文本框</li>
+</ul>
+<h4 id="4-特殊字符"><a href="#4-特殊字符" class="headerlink" title="4. 特殊字符"></a>4. 特殊字符</h4><p>标点, 空格, 回车, 制表符<br>标点: <code>character = $(&#39;span:visible&#39;, $this).html();</code><br>回车/制表/空格: <code>character = &quot;\n&quot;;</code>   </p>
+<h2 id="二-笔记"><a href="#二-笔记" class="headerlink" title="(二). 笔记"></a>(二). 笔记</h2><h3 id="1-焦点事件"><a href="#1-焦点事件" class="headerlink" title="1. 焦点事件"></a>1. 焦点事件</h3><p>两个文本框, 想判断当前焦点是哪个  </p>
+<ul>
+<li>事件对象: <code>document.activeElement</code>  </li>
+<li>监听文本框失去焦点和获取焦点事件, 判断  </li>
+</ul>
+<p>代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line"><span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">    input_element_id = current_focus_id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>遇到问题: 发现无法获取当前焦点, 猜测:<br>A失去焦点, B获得焦点. 两个动作是同时发生的, 但监听A失去焦点时, B并未获得焦点<br>解决办法:<br>添加定时器, 延期0秒执行(则B获得焦点, 代码如下: )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">    <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">        input_element_id = current_focus_id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 2. 用`</span>jquery<span class="string">`的`</span>delegate<span class="string">`添加事件</span></span><br><span class="line"><span class="string">&gt; 指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。   </span></span><br><span class="line"><span class="string">&gt; 使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">代码:   </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">$(<span class="string">'.login'</span>).delegate(<span class="string">"*"</span>, <span class="string">"focus blur"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">     setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">        <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">            input_element_id = current_focus_id;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>猜测实现:    </p>
+<ul>
+<li>遍历指定元素的所有符合选择器的元素, </li>
+<li>为他们添加事件监听</li>
+<li>绑定事件触发时执行的函数</li>
+</ul>
+<h3 id="3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写"><a href="#3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写" class="headerlink" title="3. css 样式设置为: text-transform: uppercase 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写"></a>3. css 样式设置为: <code>text-transform: uppercase</code> 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

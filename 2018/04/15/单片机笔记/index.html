@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="单片机笔记##目录
+
+单片机型号
+开发板介绍
+HC6800-ES V2.0开发板所能实现的功能
+知识要点
+课程目录
+实验程序目录
+学习路径
+安装单片机
+
+单片机型号: STC89C52 内存8KB 开发板型号: HC6800-ES V2.0开发板介绍(之TODO: 补上每个接口干嘛用的)
+
+超声波模">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/15/单片机笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-15T12:53:21.051Z">
+          2018-04-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="单片机笔记"><a href="#单片机笔记" class="headerlink" title="单片机笔记"></a>单片机笔记</h1><p>##目录</p>
+<ul>
+<li>单片机型号</li>
+<li>开发板介绍</li>
+<li>HC6800-ES V2.0开发板所能实现的功能</li>
+<li>知识要点</li>
+<li>课程目录</li>
+<li>实验程序目录</li>
+<li>学习路径</li>
+<li>安装单片机</li>
+</ul>
+<h2 id="单片机型号-STC89C52-内存8KB-开发板型号-HC6800-ES-V2-0"><a href="#单片机型号-STC89C52-内存8KB-开发板型号-HC6800-ES-V2-0" class="headerlink" title="单片机型号: STC89C52 内存8KB 开发板型号: HC6800-ES V2.0"></a>单片机型号: STC89C52 内存8KB 开发板型号: HC6800-ES V2.0</h2><h2 id="开发板介绍-之TODO-补上每个接口干嘛用的"><a href="#开发板介绍-之TODO-补上每个接口干嘛用的" class="headerlink" title="开发板介绍(之TODO: 补上每个接口干嘛用的)"></a>开发板介绍(之TODO: 补上每个接口干嘛用的)</h2><p><img src="https://i.imgur.com/jHKmFiu.jpg" alt="开发板结构"></p>
+<ol>
+<li>超声波模块接口  </li>
+<li>NRF24L01无线模块接口  </li>
+<li>无源蜂鸣器   </li>
+<li>DS18B20温度传感器接口  </li>
+<li>红外接收头  </li>
+<li>电源开关  </li>
+<li>自动下载电路（CH340转换芯片）  </li>
+<li>miniUSB接口（兼容安卓手机数据线，既可供电又可下载程序，还能串口通信）  </li>
+<li>ISP下载接口（为AT及AVR系列单片机下载）  </li>
+<li>复位按键  </li>
+<li>LCD12864模块接口  </li>
+<li>LCD1602模块接口  </li>
+<li>数码管模块（2个四位一体共阴数码管）  </li>
+<li>DS1302时钟模块  </li>
+<li>LED模块（8个LED）  </li>
+<li>独立按键模块（4个独立按键）  </li>
+<li>单片机所有IO口（方便用户外扩功能模块）  </li>
+<li>单片机紧缩座（出厂时安装STC89C52单片机）  </li>
+<li>矩阵按键模块</li>
+<li>8*8LED点阵模块（可显示字符及简单汉字）  </li>
+<li>74HC245芯片（驱动数码管模块）  </li>
+<li>步进电机模块（五线四项步进电机，驱动芯片ULN2003，也可驱动直流电机）  </li>
+<li>74HC138译码器芯片（控制数码管位选）  </li>
+<li>EEPROM模块（24C02芯片）  </li>
+<li>74HC595模块（内含8个LED）  </li>
+<li>AD/DA模块  </li>
+</ol>
+<h2 id="HC6800-ES-V2-0开发板所能实现的功能"><a href="#HC6800-ES-V2-0开发板所能实现的功能" class="headerlink" title="HC6800-ES V2.0开发板所能实现的功能"></a>HC6800-ES V2.0开发板所能实现的功能</h2><ol>
+<li>流水灯（LED模块）</li>
+<li>蜂鸣器报警</li>
+<li>数码管显示</li>
+<li>独立按键控制</li>
+<li>温度检测</li>
+<li>红外遥控</li>
+<li>实时时钟</li>
+<li>LCD显示（LCD1602\LCD12864）</li>
+<li>超声波检测</li>
+<li>2.4G无线通信</li>
+<li>AD/DA转换控制</li>
+<li>8*8LED点阵显示</li>
+<li>矩阵按键控制</li>
+<li>EEPROM实验（保存的数据掉电不丢失）</li>
+<li>智能温度控制系统（温度检测+蜂鸣器+独立按键+LED+数码管显示+步进电机）:实现温度的检测智能控制  </li>
+<li>多功能电子时钟（温度检测+蜂鸣器+独立按键+LED+LCD1602+DS1302时钟+24C02）：实现日历、闹钟、温度等功能控制，将闹铃数据存储在24CO2芯片中  </li>
+<li>多功能游戏机（蜂鸣器+独立按键+LED+LCD12864+DS1302时钟+温度检测）：实现贪吃蛇、俄罗斯方块、时钟、温度控制等  </li>
+<li>无线控制应用（温度检测+蜂鸣器+红外遥控+LCD1602+DS1302时钟）：使用红外遥控器调节时钟及温度阀值等控制  </li>
+<li>智能计算器（温度检测+蜂鸣器+独立按键+LED+LCD1602+DS1302时钟+24C02+矩阵按键）：实现类似计算器的功能，具有加减乘除等基本功能和时钟温度显示功能  </li>
+<li>8<em>8点阵版游戏机（8</em>8点阵+独立按键+蜂鸣+数码管）：在8*8LED点阵上实现贪吃蛇游戏，数码管显示累积分数  </li>
+<li>烟雾（甲烷、CO2等气体）检测报警器（AD模块+独立按键+蜂鸣+LCD1602+直流电机）：利用外部烟雾传感器采集的模拟信号，通过AD转换进行控制  </li>
+</ol>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><ol>
+<li>C语言的学习及使用  </li>
+<li>IO口的基本使用  </li>
+<li>定时器的配置及使用  </li>
+<li>中断的配置及使用  </li>
+<li>串口通信的配置及使用  </li>
+<li>外围模块的学习及使用  </li>
+<li>常用通信时序的模拟学习及使用<br>这里只列举了部分知识要点，更多的知识要点需后面学习体会。  </li>
+</ol>
+<h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><ul>
+<li>开发板介绍及使用</li>
+<li>51单片机介绍</li>
+<li>C语言基础</li>
+<li>单片机最小系统</li>
+<li>开发软件安装与工程建立</li>
+<li>点亮第一个LED</li>
+<li>LED闪烁</li>
+<li>LED流水灯</li>
+<li>蜂鸣器</li>
+</ul>
+<h2 id="实验程序目录"><a href="#实验程序目录" class="headerlink" title="实验程序目录"></a>实验程序目录</h2><ul>
+<li>基础实验例程<ul>
+<li>点亮第一个LED</li>
+<li>LED闪烁</li>
+<li>LED流水灯</li>
+<li>蜂鸣器</li>
+<li>静态数码管显示</li>
+<li>动态数码管显示</li>
+<li>独立按键</li>
+<li>矩阵按键</li>
+<li>8X8LED点阵(点亮一个点)</li>
+<li>8X8LED点阵(显示数字)</li>
+<li>外部中断0</li>
+<li>外部中断1</li>
+<li>定时器0中断</li>
+<li>定时器1中断</li>
+<li>串口通信</li>
+<li>EEPROM-IIC</li>
+<li>DS18B20温度传感器</li>
+<li>DS1302时钟</li>
+<li>红外通信</li>
+<li>AD模数转换</li>
+<li>DA数模转换</li>
+<li>LCD1602液晶</li>
+</ul>
+</li>
+<li>中级实验例程</li>
+<li>高级实验例程</li>
+</ul>
+<h2 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h2><p>51 -&gt; STM32 -&gt; ARM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">51 --&gt; STM32</span><br><span class="line">STM32 --&gt; ARM</span><br></pre></td></tr></table></figure>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法:"></a>想法:</h2><p>单片式是否能够实现婚宴礼金录入, 数据统计<br>酒精测试仪</p>
+<h2 id="安装单片机"><a href="#安装单片机" class="headerlink" title="安装单片机"></a>安装单片机</h2><p>安装单片机</p>
+<ol>
+<li>连接usb线</li>
+<li>USB驱动下载(可能不需要)</li>
+<li>系统驱动(烧录软件)</li>
+</ol>
+<p>安装失败: 安装相应驱动/ 驱动精灵/换一条线</p>
+<p>先学集成好的烧写软件, 之后再学习标准配置方法.</p>
+<p><img src="https://i.imgur.com/o0TBXi8.jpg" alt="单片机截图"><br><img src="https://i.imgur.com/UIV3QY5.png" alt="烧录软件截图"></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

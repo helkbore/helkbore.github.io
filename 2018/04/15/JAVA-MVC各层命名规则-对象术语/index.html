@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="JAVA-MVC各层命名规则-对象术语
+DAO (data access object) 数据库访问对象访问数据库的
+DTO (Data Transfer Object) 数据传输对象DTO 是一组需要跨进程或网络边界传输的聚合数据的简单容器。它不应该包含业务逻辑，并将其行为限制为诸如内部一致性检查">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/15/JAVA-MVC各层命名规则-对象术语/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-15T12:53:20.756Z">
+          2018-04-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="JAVA-MVC各层命名规则-对象术语"><a href="#JAVA-MVC各层命名规则-对象术语" class="headerlink" title="JAVA-MVC各层命名规则-对象术语"></a>JAVA-MVC各层命名规则-对象术语</h1><ul>
+<li>DAO (data access object) 数据库访问对象<br>访问数据库的</li>
+<li>DTO (Data Transfer Object) 数据传输对象<br>DTO 是一组需要跨进程或网络边界传输的聚合数据的简单容器。它不应该包含业务逻辑，并将其行为限制为诸如内部一致性检查和基本验证之类的活动。注意，不要因实 现这些方法而导致 DTO 依赖于任何新类。在设计数据传输对象时，您有两种主要选择：使用一般集合；或使用显式的 getter 和 setter 方法创建自定义对象。<br>个人感觉是api类似那种的用法</li>
+<li><p>DO (Domain Object) 领域对象<br>从现实世界中抽象出来的有形或无形的业务实体。<br>概念模型, 描述逻辑为基础, 可以包含行为和数据</p>
+</li>
+<li><p>BO (business object) 业务对象</p>
+</li>
+<li>POJO (plain ordinary java object) 简单无规则java对象</li>
+<li>PO (persistant object) 持久对象<br>就是在Object/Relation Mapping框架中的Entity<br>接收数据库DAO层的(java bean???)</li>
+<li>VO(value object/ view object) 值对象/表现层对象</li>
+<li>TO  (Transfer Object) 传输对象  在应用程序不同 tie( 关系 ) 之间传输的对象</li>
+</ul>
+<p>JSP/HTML -&gt; VO -&gt; PO -&gt; DAO -&gt; DB -&gt; PO -&gt; BO -&gt; VO -&gt; JSP/HTML</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
