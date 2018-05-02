@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="轮播图笔记1. 给某个元素加方法(将参数合并到实例对象中)声明:1var xxxMethod = function(el)&amp;#123;&amp;#125;
+装配12345$.fn.extend(&amp;#123;    xxxMethod: function() &amp;#123;        new xxxMeth">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/轮播图笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.704Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="轮播图笔记"><a href="#轮播图笔记" class="headerlink" title="轮播图笔记"></a>轮播图笔记</h1><h2 id="1-给某个元素加方法-将参数合并到实例对象中"><a href="#1-给某个元素加方法-将参数合并到实例对象中" class="headerlink" title="1. 给某个元素加方法(将参数合并到实例对象中)"></a>1. 给某个元素加方法(将参数合并到实例对象中)</h2><p>声明:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxxMethod = <span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>装配<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.fn.extend(&#123;</span><br><span class="line">    xxxMethod: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> xxxMethod($(<span class="keyword">this</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>调用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.xxElement'</span>).xxxMethod()</span><br></pre></td></tr></table></figure></p>
+<p>// TODO 读码未实现. 有时间需要实践一下是否好用</p>
+<h2 id="2-extend的用法"><a href="#2-extend的用法" class="headerlink" title="2 extend的用法"></a>2 extend的用法</h2><p>后面的取代前面的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(<span class="keyword">this</span>.config,<span class="keyword">this</span>.userConfig);</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-轮播图原理"><a href="#3-轮播图原理" class="headerlink" title="3 轮播图原理"></a>3 轮播图原理</h2><p>计算每张图片的宽度, 然后绝对定位: 负定位于页面的左边<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">w: <span class="keyword">this</span>.el.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">slider_img_ul.css(<span class="string">'left'</span>, - <span class="keyword">this</span>.config.w * <span class="keyword">this</span>.config.current - <span class="keyword">this</span>.config.w)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

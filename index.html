@@ -49,7 +49,7 @@
       
         <li><a href="/archives">Archives</a></li>
 		
-		<li><a href="star.html">昆虫记</a></li>
+		<li><a href="star.html"></昆虫记></li>
 		
 		<li><a href="jl.html">简历</a></li>
       
@@ -63,15 +63,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/正则表达式收集/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/svg学习/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/正则表达式收集/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.289Z">
-          2018-04-15
+      <a href="/2018/05/02/svg学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.627Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -83,43 +83,39 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><ol>
-<li>正整数 (觉得有问题)<br><code>/^[0-9]*[1-9][0-9]*$/</code></li>
-<li>负整数<br><code>/^-[0-9]*[1-9][0-9]*$/;</code></li>
-<li>正浮点数<br><code>/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;</code></li>
-<li>负浮点数<br><code>/^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;</code>  </li>
-<li>浮点数<br><code>/^(-?\d+)(\.\d+)?$/;</code></li>
-<li>email地址<br><code>\w+-?\w+@\w+.(com|cn)</code></li>
-<li>url地址<br><code>/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/;</code><br>或：<code>^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\&#39;:+!]*([^&lt;&gt;\&quot;\&quot;])*$</code></li>
-<li>年/月/日（年-月-日、年.月.日）<br><code>/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;</code></li>
-<li>匹配中文字符<br><code>/[\u4e00-\u9fa5]/;</code></li>
-<li>匹配帐号是否合法(字母开头，允许5-10字节，允许字母数字下划线)<br><code>/^[a-zA-Z][a-zA-Z0-9_]{4,9}$/;</code></li>
-<li>匹配空白行的正则表达式<br><code>/\n\s*\r/;</code></li>
-<li>匹配中国邮政编码<br><code>/[1-9]\d{5}(?!\d)/;</code></li>
-<li>匹配身份证<br><code>/\d{15}|\d{18}/;</code></li>
-<li>匹配国内电话号码<br><code>/(\d{3}-|\d{4}-)?(\d{8}|\d{7})?/;</code></li>
-<li>匹配IP地址<br><code>/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;</code></li>
-<li>匹配首尾空白字符的正则表达式<br><code>/^\s*|\s*$/;</code></li>
-<li>匹配HTML标记的正则表达式<br><code>&lt; (\S*?)[^&gt;]*&gt;.*?|&lt; .*? /&gt;;</code></li>
-<li>sql 语句<br><code>^(select|drop|delete|create|update|insert).*$</code></li>
-<li>提取信息中的网络链接<br><code>(h|H)(r|R)(e|E)(f|F) *= *(&#39;|&quot;)?(\w|\\|\/|\.)+(&#39;|&quot;| *|&gt;)?</code> </li>
-<li>提取信息中的邮件地址<br><code>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</code></li>
-<li>提取信息中的图片链接<br><code>(s|S)(r|R)(c|C) *= *(&#39;|&quot;)?(\w|\\|\/|\.)+(&#39;|&quot;| *|&gt;)?</code> </li>
-<li>提取信息中的 IP 地址<br><code>(\d+)\.(\d+)\.(\d+)\.(\d+)</code></li>
-<li>取信息中的中国手机号码<br><code>(86)*0*13\d{9}</code></li>
-<li>提取信息中的中国邮政编码<br><code>[1-9]{1}(\d+){5}</code> </li>
-<li>提取信息中的浮点数（即小数）<br><code>(-?\d*)\.?\d+</code></li>
-<li>提取信息中的任何数字<br><code>(-?\d*)(\.\d+)?</code></li>
-<li>电话区号<br><code>^0\d{2,3}$</code></li>
-<li>腾讯 QQ 号<br><code>^[1-9]*[1-9][0-9]*$</code></li>
-<li>帐号（字母开头，允许 5-16 字节，允许字母数字下划线）<br><code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></li>
-<li>中文、英文、数字及下划线<br><code>^[\u4e00-\u9fa5_a-zA-Z0-9]+$</code></li>
-<li>纯数字<br><code>^[0-9]+$</code> 或 <code>^\d+$</code></li>
-<li>纯字母<br><code>^[a-zA-Z]+$</code></li>
-<li>只能是字母开头，并且字母和数字的组合，长度范围是6-10<br><code>^[a-zA-Z]{1}\w{5,9}$</code></li>
-<li>\w<br><code>[a-zA-Z]|\w</code></li>
-<li>6位数字<br><code>^\d{6}$</code></li>
+        <h1 id="svg-学习"><a href="#svg-学习" class="headerlink" title="svg 学习"></a>svg 学习</h1><h2 id="lt-svg-gt-开始标签"><a href="#lt-svg-gt-开始标签" class="headerlink" title="&lt;svg&gt; 开始标签"></a><code>&lt;svg&gt;</code> 开始标签</h2><p><code>width</code>, <code>height</code> svg图片的宽高</p>
+<h2 id="circle-圆"><a href="#circle-圆" class="headerlink" title="circle 圆"></a>circle 圆</h2><p>cy, cx 圆心的坐标, 默认(0, 0)<br>r 半径</p>
+<ul>
+<li>stroke: 外边框颜色  </li>
+<li>stroke-width: 外边框宽度  </li>
+<li>fill: 圆填充的颜色  </li>
+</ul>
+<h2 id="rect-矩形"><a href="#rect-矩形" class="headerlink" title="rect 矩形"></a>rect 矩形</h2><ul>
+<li>x: 距左边的距离</li>
+<li>y: 距顶部的距离</li>
+<li>rx, ry: 矩形圆角<h3 id="style-css样式"><a href="#style-css样式" class="headerlink" title="style: css样式"></a>style: css样式</h3></li>
+</ul>
+<ul>
+<li>fill 填充  </li>
+<li>stroke-width: 边框宽度  </li>
+<li>stroke: 边框颜色  </li>
+<li>fill-opacity: 填充色的透明度</li>
+<li>边框的透明度</li>
+<li>opacity: 整个元素的透明度<h2 id="ellipse-椭圆"><a href="#ellipse-椭圆" class="headerlink" title="ellipse 椭圆"></a>ellipse 椭圆</h2></li>
+<li>cx, cy: 圆点坐标</li>
+<li>rx, ry 水平半径, 垂直半径<h2 id="line-线"><a href="#line-线" class="headerlink" title="line 线"></a>line 线</h2><h2 id="polyline-折线"><a href="#polyline-折线" class="headerlink" title="polyline 折线"></a>polyline 折线</h2><h2 id="polygon-多边形"><a href="#polygon-多边形" class="headerlink" title="polygon 多边形"></a>polygon 多边形</h2><h2 id="path-路径"><a href="#path-路径" class="headerlink" title="path 路径"></a>path 路径</h2></li>
+</ul>
+<h2 id="viewBox-与-viewPort"><a href="#viewBox-与-viewPort" class="headerlink" title="viewBox 与 viewPort"></a>viewBox 与 viewPort</h2><p>viewPort指的就是<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">""</span> <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>将viewBox里的区域全屏居中显示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">viewBox</span>=<span class="string">"0,0,40,30"</span> <span class="attr">style</span>=<span class="string">"border:1px solid #cd0000;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"20"</span> <span class="attr">height</span>=<span class="string">"15"</span> <span class="attr">fill</span>=<span class="string">"#cd0000"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="preserveAspectRation"><a href="#preserveAspectRation" class="headerlink" title="preserveAspectRation"></a>preserveAspectRation</h2><p>适用情况: viewPort 与 viewBox 不比例不那么匹配的时候<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">preserveAspectRation="xMinYMid slice"</span><br></pre></td></tr></table></figure></p>
+<p>第1个值表示，viewBox如何与SVG viewport对齐；第2个值表示，如何维持高宽比（如果有）<br>第1个值又是由两部分组成的。前半部分表示x方向对齐，后半部分表示y方向对齐<br>值        含义<br>xMin    viewport和viewBox左边对齐<br>xMid    viewport和viewBox x轴中心对齐<br>xMax    viewport和viewBox右边对齐<br>YMin    viewport和viewBox上边缘对齐。注意Y是大写。<br>YMid    viewport和viewBox y轴中心点对齐。注意Y是大写。<br>YMax    viewport和viewBox下边缘对齐。注意Y是大写。   </p>
+<p>第2个值<br>值    含义<br>meet    保持纵横比缩放viewBox适应viewport，受<br>slice    保持纵横比同时比例小的方向放大填满viewport，攻<br>none    扭曲纵横比以充分适应viewport，变态</p>
+<h2 id="transform-”matrix-1-0-0-1-51-125-36-0977-”"><a href="#transform-”matrix-1-0-0-1-51-125-36-0977-”" class="headerlink" title="transform=”matrix(1,0,0,1,51.125,36.0977)”"></a>transform=”matrix(1,0,0,1,51.125,36.0977)”</h2><p>矩阵<br>[a, c, e]<br>[b, d, f]<br>[0, 0, 1]<br>得出 x = ax + cy + e, y = bx + dy + f<br>所以matrix(1, 0, 0, 1, 51.125, 36.0977) 代入得<br>x = x + 51.125<br>y = y + 36.0977<br>效果就是: 向右移动了51.125, 向下移动了36.0977</p>
+<h2 id="文本换行写法"><a href="#文本换行写法" class="headerlink" title="文本换行写法"></a>文本换行写法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"35"</span> <span class="attr">y</span>=<span class="string">"50"</span> <span class="attr">style</span>=<span class="string">"fill: #000;"</span>&gt;</span>使用说明书</span><br><span class="line">    <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">x</span>=<span class="string">"50"</span> <span class="attr">y</span>=<span class="string">"70"</span>&gt;</span>合格证<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="maker"><a href="#maker" class="headerlink" title="maker"></a>maker</h2><h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
+<li>SVG DOM 在 Document Object Model HTML 之后构建</li>
 </ol>
+<p>##其他笔记<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br><span class="line">(<span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -145,15 +141,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/有点迷茫静下来思考一下/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/SVGElement文档翻译/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/有点迷茫静下来思考一下/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.273Z">
-          2018-04-15
+      <a href="/2018/05/02/SVGElement文档翻译/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.610Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -165,425 +161,34 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>有种不知道下一步要做什么的感觉, 确切的说是想做的有很多, 而知识往往不是一蹴而就的. 有一些焦虑有一些迷茫, 或是觉得是不是应该放弃一些妄想和贪婪.</p>
-<p>想学习的很多, 这说明我差的很远? 知识真的是相通的吗我不确定. 可能每一个知识想成为专家都需要一生的时间吧. 我不知道是应该让事件驱动我(比如我想建个论坛)还是用焦虑驱动(比如我觉得我应该好好过一过基础知识)</p>
-<p>在此, 我想停下来思考. 我反复在想我为什么学习计算机, 从事它, 为它耗费光阴.</p>
-<p>首先, 应该是乐趣吧, 这很泛泛<br>其次, 是觉得很酷, 会什么什么, 能做出什么什么. 同义词是成就感吗?<br>最后, 是生存. 虽然需求很低(能糊口就好), 但仍旧很难做到. 因为还想自由的生存, 也许我太急功近利.  无比羡慕力工钟点工小时工, 因为他们自由啊. </p>
-<p>那么, 乐趣是什么呢? 觉得有趣? 怎样会有趣? 应该是做有趣的东西吧, 那种成就感. 像打游戏一样. 也许乐趣就是我打了什么什么副本, 赢了某场游戏?<br>那知识是什么呢? 我升了多少级? 我点了什么天赋学了什么技能? 技能用的是否熟练? 这样想来, 我打游戏的时候也不是那么目的明确? 下副本是为了升级然后下更高的副本然后升级更快? 最后满级? 满级以后又想着做装备, 然后下副本, 这么死循环着穷忙活.  嗯嗯, 我当时满级了以后练手法攒装备是为了下更高级的副本, 有更多的副本可下. 偶尔心如止水的环游游戏世界或是搞搞收藏.<br>游戏的架构是 等级经验 -&gt; 技能装备 -&gt; 副本 -&gt; 团战 -&gt; 与别人对比的自我满足?(我不是这种)<br>计算机呢 ?<br>基础知识 -&gt; 语言及库 -&gt; 作品</p>
-<p>也许一开始就想错了, 不是学了所有基础知识之后再去写东西的. 就像游戏里不是等满级了再去点技能点再去下本是一样的吧 .</p>
-<p>所以焦虑的一个原因是没有量化自己的目标? 或是指定标准, 或是干脆随心所欲? 也就是说, 存在错误的认识, 畏惧知识.<br>那么打副本是为了打装备, 如果没打到会得到副本经验, 会继续下副本. 期间有挑战和收获的乐趣, 以及变成更好的自己.<br>我想, 游戏的区别是时间和次数限制, 任务副本每天只能打那么多, 所以这个本打完了会去打另一个吧 ?</p>
-<p>回来我的话题, 不聊游戏. 乐趣是纯粹的, 有趣好玩的都可以.  有所收获是成就感.<br>所以呢? 什么好玩做什么吧? 然后自己设定目标阶段目标.  不能干那种把级练满了再点技能点的事情. </p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/新建项目配置文档/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/新建项目配置文档/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.266Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><ol>
-<li><p>新建项目: </p>
-<ul>
-<li>new -&gt; dynamic web project -&gt; 输入project name</li>
-<li>Default output folder: 填入: web\WEB-INF\classes (新建项目 下一步后的设置页输入框)</li>
-<li>下一步 Content directory 填入 web</li>
-</ul>
-</li>
-<li><p>建包: src下 </p>
-<ul>
-<li>com.dao</li>
-<li>com.entity</li>
-<li>com.service</li>
-<li>com.web</li>
-</ul>
-</li>
-<li><p>建实体类</p>
-<ul>
-<li>com.entity下建class - Menu.class</li>
-<li>建成员 id, title等 createDate为Date类型(java.util包)</li>
-<li>生成get,set方法 右键 -&gt; source -&gt; Generate Getters and Setters(全选)</li>
-</ul>
-</li>
-<li><p>建servlet</p>
-<ul>
-<li>在com.web下 右键 new -&gt; Servlet , 输入名称 next -&gt; next -&gt; finish</li>
-</ul>
-</li>
-<li><p>在web下 与WEB-INF同级 新建Menu.jsp, 改utf-8. 表单</p>
-</li>
-<li><p>运行, 右键工程 run as … 选择server</p>
-</li>
-</ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/软件开发流程/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/软件开发流程/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.227Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="软件开发流程-理想"><a href="#软件开发流程-理想" class="headerlink" title="软件开发流程(理想)"></a>软件开发流程(理想)</h1><ol>
-<li><p>调研 (调研文档)</p>
-</li>
-<li><p>需求分析 (需求文档)</p>
-</li>
-<li><p>设计 (概要设计, 详细设计)–设计文档</p>
-</li>
-<li><p>编码</p>
-</li>
-<li><p>测试—-测试计划, 测试用例, 测试报告—-功能测试, 性能测试 loadrunner</p>
-</li>
-<li><p>运维–部署及维护 (一般运维会免费维护三个月)</p>
-</li>
-</ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/每日/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/每日/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.201Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="2018-2-11"><a href="#2018-2-11" class="headerlink" title="2018-2-11"></a>2018-2-11</h1><hr>
-<ul>
-<li><blockquote>
-<p>三是我不觉得挣钱有多难，难的是怎么让你值那么多钱？无论是打工还是创业，是什么东西让你自己的价值，让你公司的价值更值钱？</p>
-</blockquote>
-</li>
-<li>看不懂的代码(尤其是框架源码) 那些比较复杂的, 我可以考虑重构啊!!!!<blockquote>
-<p>批注于2018-3-1: 可以将调用了好多层的函数写在一个函数里看懂之后再分离</p>
-</blockquote>
-</li>
-<li>程序员技术练习攻略:  <a href="http://mp.weixin.qq.com/s/tqL1XnNA0YMESo_aKP1E8w" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/tqL1XnNA0YMESo_aKP1E8w</a></li>
-<li>HTML5定义了web database技术，这是一种轻量级完整的客户端存储技术</li>
-</ul>
-<h1 id="2018-2-21"><a href="#2018-2-21" class="headerlink" title="2018-2-21"></a>2018-2-21</h1><hr>
-<p>需要一个自己的网站, 里面有技术博客和每日备忘<br>把每日想记下来的东西记下来, 每天看, 然后添加一些, 不需要的再删除一些</p>
-<h1 id="2018-2-23"><a href="#2018-2-23" class="headerlink" title="2018-2-23"></a>2018-2-23</h1><hr>
-<p>文章：程序员=清单？我拒绝<br>前端练习：个人网址大全<br>素描本本与活页夹</p>
-<h1 id="2018-2-24"><a href="#2018-2-24" class="headerlink" title="2018-2-24"></a>2018-2-24</h1><hr>
-<p>文章: 面对未知：谦逊而不敬畏并充满好奇<br>讲课实验：课前准备好讲义， 课前预习课堂板书，晨读内容， 作业练习。<br>给不会学习的学生规范流程，给会学习的学生以空间<br>学习设计模式和设计原则<br>java静态块 static{…codes…..}<br>父类引用指向子类对象 Animal a = new Cat();<br>设计模式需要深造的: 原型模式, 桥接模式<br>@Override, @test这些东西</p>
-<p>tomcat研究<br>kali linux安装学习<br>系统光盘制作 win10, xp, ubuntu, kali<br>高等数学零基础<br>书单: 微积分之屠龙宝刀<br>微积分课程: <a href="http://open.163.com/special/sp/singlevariablecalculus.html" target="_blank" rel="noopener">http://open.163.com/special/sp/singlevariablecalculus.html</a><br>微积分预备课: <a href="http://open.163.com/special/Khan/precalculus.html" target="_blank" rel="noopener">http://open.163.com/special/Khan/precalculus.html</a></p>
-<h1 id="2018-2-26"><a href="#2018-2-26" class="headerlink" title="2018-2-26"></a>2018-2-26</h1><hr>
-<p>java中的this<br>有机会搞个手绘板玩玩<br>计算机英语:<br>java 数据结构看一半<br>java设计模式看一半- -!<br>把书读薄, 我正在经历这样的过程, 因为时间, 因为知识面的狭窄, 而其实难为情的是 每次我都试图将书读厚<br>书单: 程序员应该知道的97件事<br>时刻提醒 自己: 编程没有那么难, 实现这段代码没有那么难<br>搞了一整天的java, 头晕脑胀, 进度缓慢. 不知道是不是该沉迷于细节, 而没有动手实施, 写一个小项目之类的.</p>
-<h1 id="2018-2-27"><a href="#2018-2-27" class="headerlink" title="2018-2-27"></a>2018-2-27</h1><hr>
-<p>反射, 泛型<br>建了一个md文档收集网络上觉得好的有空想看的文章<br>明天把公司电脑上的谷歌账号登陆了<br>今天学了几节数学哟, 发现了个慕课的网站: 学堂在线<br>想开坑看java20个实战项目</p>
-<h1 id="2018-2-28"><a href="#2018-2-28" class="headerlink" title="2018-2-28"></a>2018-2-28</h1><hr>
-<p>SSM搭建<br>多建几个github账号, 存放一写东西, 当网盘用了吼</p>
-<h2 id="2018-3-1"><a href="#2018-3-1" class="headerlink" title="#2018-3-1"></a>#2018-3-1</h2><p>3月书单</p>
-<ol>
-<li>《趣味生活简史》[美]比尔·布莱森</li>
-<li>《生活中的巧思与发现笔记》[日]松浦弥太郎</li>
-<li>《旅行摄影圣经》张千里</li>
-<li>《肠子的小心思》[德]茱莉娅·恩德斯</li>
-<li>《斜杠青年》Susan Huang</li>
-<li>《八百万种走法》[美]劳伦斯·布洛克</li>
-</ol>
-<p>三部曲1《今天也要用心过生活》讲述“如何拥有丰富心灵过生活”；<br>三部曲2《崭新的理所当然》介绍摆脱重复日常，发现生活新价值的秘诀；<br>三部曲3《谢谢你》强调与人相处、守护人际关系的智慧。</p>
-<p>java学习</p>
-<ul>
-<li>java lambda</li>
-<li>java try with resourc</li>
-</ul>
-<p>google查 primitive types 应该是java原始类型<br>查: java : non-primitive type 对应上面的 primitive type</p>
-<p>计算机英语</p>
-<ul>
-<li>parentheses  括号</li>
-<li>functionality  功能</li>
-<li>retrieve  检索</li>
-<li>primitive  原始的</li>
-<li>delimit 分隔</li>
-</ul>
-<p>看一半:<br><a href="https://docs.oracle.com/javase/tutorial/java/generics/types.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/tutorial/java/generics/types.html</a><br><a href="http://blog.csdn.net/qq_27093465/article/details/73229016" target="_blank" rel="noopener">http://blog.csdn.net/qq_27093465/article/details/73229016</a></p>
-<p>教程:<br>php面试<br>java20个实战项目<br>人工智能数学基础<br>网易公开课-可汗学院的数学预科<br>edx的数据课</p>
-<p>看书: SICP</p>
-<h2 id="2018-3-5"><a href="#2018-3-5" class="headerlink" title="2018-3-5"></a>2018-3-5</h2><p>tomcat部署web应用的三种方式<br>java 读取xml配置原理<br><a href="https://yuerblog.cc/2017/01/18/quick-learn-about-java-spring-mvc/" target="_blank" rel="noopener">https://yuerblog.cc/2017/01/18/quick-learn-about-java-spring-mvc/</a><br>eclipse优化</p>
-<h2 id="2018-3-6"><a href="#2018-3-6" class="headerlink" title="2018-3-6"></a>2018-3-6</h2><p>git文档官方:<br><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2</a><br><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">https://git-scm.com/book/en/v2</a></p>
-<p>计算机英语:<br>graphic  图像<br>revert  还原<br>screw things up 搞砸了, 乱来一气</p>
-<p>《Maven 实战》, 超实用的JS代码段<br>oracle入门<br>gitbook<br>百度一下: React<br>每天读一本技术书会怎样? 我能这样读几本?</p>
-<h2 id="2018-3-7"><a href="#2018-3-7" class="headerlink" title="2018-3-7"></a>2018-3-7</h2><p>java, jsp里出现的 m:”….” 以及 s:”…..”<br>普鲁斯特问卷/普鲁斯特清单</p>
-<h2 id="2018-3-8"><a href="#2018-3-8" class="headerlink" title="2018-3-8"></a>2018-3-8</h2><p>英语: optimize 优化<br>文章: 技术方面沟通的问题: 大家都会先设个限制 然后问你能不能做, 直接用个表单控件实现模拟登陆和跳转特定页,  上传文件告诉你写的活一点..在linux系统下使用ftp上传下载文件但不用xshell之类的. 如果你要规定详细的动作方案 清考虑清楚细节并讲清楚, 如果是宽泛的问题, 最好从使用者, 最终层面上讲, 多举例子  </p>
-<p>js: self = this // 为了增加对外层域的访问, 定义了一个变量self</p>
-<p>易卜生<br>太宰治<br>词: 成人之姿相遇, 词: 晴耕雨读</p>
-<h2 id="2018-3-11"><a href="#2018-3-11" class="headerlink" title="2018-3-11"></a>2018-3-11</h2><p>前任3读后感<br>店小蜜<br>OA课程</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/轮播图笔记/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/轮播图笔记/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.181Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="轮播图笔记"><a href="#轮播图笔记" class="headerlink" title="轮播图笔记"></a>轮播图笔记</h1><h2 id="1-给某个元素加方法-将参数合并到实例对象中"><a href="#1-给某个元素加方法-将参数合并到实例对象中" class="headerlink" title="1. 给某个元素加方法(将参数合并到实例对象中)"></a>1. 给某个元素加方法(将参数合并到实例对象中)</h2><p>声明:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xxxMethod = <span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>装配<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.fn.extend(&#123;</span><br><span class="line">    xxxMethod: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> xxxMethod($(<span class="keyword">this</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>调用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.xxElement'</span>).xxxMethod()</span><br></pre></td></tr></table></figure></p>
-<p>// TODO 读码未实现. 有时间需要实践一下是否好用</p>
-<h2 id="2-extend的用法"><a href="#2-extend的用法" class="headerlink" title="2 extend的用法"></a>2 extend的用法</h2><p>后面的取代前面的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(<span class="keyword">this</span>.config,<span class="keyword">this</span>.userConfig);</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-轮播图原理"><a href="#3-轮播图原理" class="headerlink" title="3 轮播图原理"></a>3 轮播图原理</h2><p>计算每张图片的宽度, 然后绝对定位: 负定位于页面的左边<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">w: <span class="keyword">this</span>.el.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">slider_img_ul.css(<span class="string">'left'</span>, - <span class="keyword">this</span>.config.w * <span class="keyword">this</span>.config.current - <span class="keyword">this</span>.config.w)</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/浏览器工作原理/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/浏览器工作原理/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.162Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="浏览器工作原理-未完成"><a href="#浏览器工作原理-未完成" class="headerlink" title="浏览器工作原理(未完成)"></a>浏览器工作原理(未完成)</h1><p>February 11, 2018 9:24 AM</p>
-<h2 id="浏览器功能"><a href="#浏览器功能" class="headerlink" title="浏览器功能"></a>浏览器功能</h2><p>浏览器的功能：将用户选择的web资源呈现出来，需要从服务器请求资源，并将其显示在浏览器窗口中，资源的格式通常是HTML，也包括PDF、image及其他格式，用户用URI来指定所请求资源的位置。</p>
-<h2 id="浏览器结构"><a href="#浏览器结构" class="headerlink" title="浏览器结构"></a>浏览器结构</h2><p>###用户接口(用户界面) user interface<br>   地址栏、书签选项、前进后退、刷新、暂停、主页等窗口上除了网页显示区域以外的部分</p>
-<h3 id="浏览器引擎-browser-engine"><a href="#浏览器引擎-browser-engine" class="headerlink" title="浏览器引擎 browser engine"></a>浏览器引擎 browser engine</h3><p>   查询与操作渲染引擎的接口</p>
-<h3 id="渲染引擎-rendering-engine"><a href="#渲染引擎-rendering-engine" class="headerlink" title="渲染引擎 rendering engine"></a>渲染引擎 rendering engine</h3><p>   用来显示请求的内容, 例如，如果请求内容为html，它负责解析html及css，并将解析后的结果显示出来。</p>
-<h3 id="网络-networking"><a href="#网络-networking" class="headerlink" title="网络 networking"></a>网络 networking</h3><p>   用于网络请求，如HTTP请求，它包括平台无关的接口和各平台独立的实现</p>
-<h3 id="UI后端-UI-backend"><a href="#UI后端-UI-backend" class="headerlink" title="UI后端 UI backend"></a>UI后端 UI backend</h3><p>   绘制基础元件，如组合框与对话框，提供平台无关的通用接口，底层使用操作系统的相应实现</p>
-<h3 id="JS解释器-javascript-interpreter"><a href="#JS解释器-javascript-interpreter" class="headerlink" title="JS解释器 javascript interpreter"></a>JS解释器 javascript interpreter</h3><p>   用于解析执行Javascript代码　　</p>
-<h3 id="数据存储-data-persistence"><a href="#数据存储-data-persistence" class="headerlink" title="数据存储 data persistence"></a>数据存储 data persistence</h3><p>   属于持久层<br>   浏览器需要把所有数据存到硬盘上，如cookies  </p>
+        <h1 id="SVGElement文档翻译"><a href="#SVGElement文档翻译" class="headerlink" title="SVGElement文档翻译"></a>SVGElement文档翻译</h1><p>来自: <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGElement" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/SVGElement</a></p>
 <blockquote>
-<p>HTML5定义了web database技术，这是一种轻量级完整的客户端存储技术</p>
+<p>All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the SVGElement interface.<br>所有SVG元素的SVG DOM 接口都来自 SVGElement 接口</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line"> A[user interface] --&gt; B[browser engine];</span><br><span class="line"> B[browser engine] --&gt; C[rendering engine];</span><br><span class="line"> C[rendering engine] --&gt; D[networking];</span><br><span class="line"> C[rendering engine] --&gt; E[javascript interpreter];</span><br><span class="line"> C[rendering engine] --&gt; F[UI backend];</span><br><span class="line"> A[user interface] --&gt; F[UI backend]; </span><br><span class="line"> B[browser engine] --&gt; G[data persistence];</span><br></pre></td></tr></table></figure>
-<h2 id="渲染引擎"><a href="#渲染引擎" class="headerlink" title="渲染引擎"></a>渲染引擎</h2><p><em>firefox</em> 使用的是<strong>geoko</strong><br><em>Mozilla</em>  自主研发<br><em>safari</em>和<em>chrome</em>使用的是<strong>webkit </strong><br><em>webkit</em>  为Linux研发的, 苹果移植</p>
-<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><p>   渲染引擎首先通过网络获得所请求文档的内容，通常以8k分块的方式完成<br>   解析html构建dom树-&gt;构造 ==render树== -&gt;布局render树-&gt;绘制render树</p>
-<h3 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h3><ul>
-<li>渲染引擎开始解析html,并将标签转化为内容树中的dom节点。</li>
-<li>接着，解析外部css文件及style标签中的样式信息，这些样式信息以及html中的样式信息将被用来构建另一棵树-render树。</li>
-<li>render树由一些包含css属性的矩形组成，它们将被按照正确的顺序显示到屏幕上。</li>
-<li>render树构建好之后，将会执行布局过程，它将确定每个节点在屏幕上的确切坐标。</li>
-<li>再下一步就是绘制，即遍历render树，并使用UI后端层绘制每个节点。</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>   为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的html都解析完成之后再去构建和布局render树，它是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>   webkit中元素的定位称为布局，而gecko中称为回流。</p>
-<h2 id="解析与DOM树构建"><a href="#解析与DOM树构建" class="headerlink" title="解析与DOM树构建"></a>解析与DOM树构建</h2><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>####解析器-词法分析器</p>
-<ul>
-<li>语法分析</li>
-<li>词法分析</li>
-</ul>
-<p>解析是一个迭代的过程。通常，</p>
-<ul>
-<li>解析器会向词法分析器请求一个新标记，并尝试将其与某条语法规则进行匹配。如果发现了匹配规则，解析器会将一个对应于该标记的节点添加到解析树中，然后继续请求下一个标记。 </li>
-<li>如果没有规则与该标记匹配，解析器就会将标记存储到内部，并继续请求下一个标记，直至找到可与所有内部存储的标记匹配的规则。 </li>
-<li>如果没有规则(即没有找到相应的语法规则)，解析器就会引发一个异常。这意味着文档无效，包含语法错误。</li>
-</ul>
-<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><p>很多时候，解析树还不是最终结果。解析通常是在转换过程中使用的，而转换是指将输入文档转换成另一种格式。编译就是一个例子。编译器可将源代码编译成机器代码，具体过程是首先将源代码解析成解析树，然后将解析树翻译成机器代码文档。</p>
-<h3 id="html解析"><a href="#html解析" class="headerlink" title="html解析"></a>html解析</h3><ol>
-<li><p>html不能被一般的自顶向下或者自底向上的解析器所解析的原因如下：</p>
-<ul>
-<li>这门语言本身的宽容特性</li>
-<li>浏览器对一些常见的非法html有容错机制</li>
-<li>解析过程是往复的，通常源码不会有解析过程中发生改变，但在html中，脚本标签包含document.write可能添加标签，这说明在解析过程中实际上修改了输入</li>
-</ul>
-</li>
-<li><p>html5规范中描述了html的解析算法:包括两个阶段——符号化及构建树。</p>
-<ul>
-<li><p><strong>符号化</strong>  是词法分析的过程，将输入解析为符号，html的符号包括开始标签、结束标签、属性名及属性值   </p>
-</li>
-<li><p>符号识别器识别出符号后，将其传递给<strong>树构建</strong>器，并读取下一个字符，以识别下一个符号，这样直到处理完所有输入。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="css解析"><a href="#css解析" class="headerlink" title="css解析"></a>css解析</h3><ul>
-<li>特性：css解析属于上下文无关文法</li>
-<li><p>实现：</p>
-<ul>
-<li>webkit使用flex和bison解析生成器从css语法文件中自动生成解析器。Bison创建一个自底向上的解析器，firefox使用自顶向下解析器。</li>
-<li>它们都将每个css文件解析为<strong>样式表对象</strong>，每个对象包含css规则，css规则对象包含选择器和声明对象，以及其他一些符合css语法的对象。</li>
-</ul>
-</li>
-<li><p>处理脚本及样式表的顺序</p>
-<ul>
-<li>脚本：web的模式是同步的。开发者可以将脚本标识为<strong>defer</strong>,以使其<em>不阻塞文档解析</em>，并在文档解析结束后执行。</li>
-<li>预解析：当执行脚本时，另一个线程解析剩下的文档，并加载后面需要通过网络加载的资源。这种方式可以使资源并行加载从而使整体速度更快。</li>
-<li>样式表：脚本可能在文档的解析过程中请求样式信息，如果样式还没有加载和解析，脚本将得到错误的值，firefox在存在样式表还在加载和解析时阻塞所有的脚本，而chrome只在当脚本试图访问某些可能被未加载的样式表所影响的特定的样式属性时才阻塞这些脚本。</li>
-</ul>
-</li>
-</ul>
-<h2 id="渲染树结构"><a href="#渲染树结构" class="headerlink" title="渲染树结构"></a>渲染树结构</h2><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h2 id="绘制painting"><a href="#绘制painting" class="headerlink" title="绘制painting"></a>绘制painting</h2><p>参考:   </p>
-<p><a href="http://www.cnblogs.com/xiaohuochai/p/4741054.html" target="_blank" rel="noopener">浏览器的工作原理</a> <a href="http://www.cnblogs.com/xiaohuochai/p/4741054.html" target="_blank" rel="noopener">http://www.cnblogs.com/xiaohuochai/p/4741054.html</a><br><a href="http://blog.csdn.net/dangnian/article/details/50876241" target="_blank" rel="noopener">http://blog.csdn.net/dangnian/article/details/50876241</a></p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="SVGElement-dataset-只读"><a href="#SVGElement-dataset-只读" class="headerlink" title="SVGElement.dataset (只读)"></a>SVGElement.dataset (只读)</h3><blockquote>
+<p>A DOMStringMap object which provides a list of key/value pairs of named data attributes which correspond to custom data attributes attached to the element. These can also be defined in SVG using attributes of the form data-<em>, where </em> is the key name for the pair. This works just like HTML’s HTMLElement.dataset property and HTML’s data-* global attribute.    </p>
+</blockquote>
+<p>“DOMStringMap”对象, 是元素自定义属性( custom data attributes )的键值对列表 .在 SVG 中通过使用SVGAttr(“data-<em>“)属性, </em> 是键名. 与HTML的 “HTMLElement.dataset” 属性以及 HTML的 data-* 全局属性类似</p>
+<h3 id="SVGElement-id-只读"><a href="#SVGElement-id-只读" class="headerlink" title="SVGElement.id (只读)"></a>SVGElement.id (只读)</h3><blockquote>
+<p>A DOMString representing the value of the id attribute on the given element, or the empty string if id is not present.    </p>
+</blockquote>
+<p>DOMString, 表示一个元素的 id 属性的值. 若 id 不存在, 则该值为空</p>
+<h3 id="SVGElement-xmlbase-只读"><a href="#SVGElement-xmlbase-只读" class="headerlink" title="SVGElement.xmlbase (只读)"></a>SVGElement.xmlbase (只读)</h3><blockquote>
+<p>A DOMString corresponding to the xml:base attribute on the given element.     </p>
+</blockquote>
+<p>DOMString, 与xml:base属性相对应.</p>
+<h3 id="SVGElement-ownerSVGElement-只读"><a href="#SVGElement-ownerSVGElement-只读" class="headerlink" title="SVGElement.ownerSVGElement (只读)"></a>SVGElement.ownerSVGElement (只读)</h3><blockquote>
+<p>An SVGSVGElement referring to the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.    </svg></svg></p>
+</blockquote>
+<p>SVGSVGElement, 指向最近的<svg>祖先元素, 如果给定元素是最外层的<svg>, 则返回null</svg></svg></p>
+<h3 id="SVGElement-viewportElement-只读"><a href="#SVGElement-viewportElement-只读" class="headerlink" title="SVGElement.viewportElement (只读)"></a>SVGElement.viewportElement (只读)</h3><blockquote>
+<p>The SVGElement, which established the current viewport. Often, the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.     </svg></svg></p>
+</blockquote>
+<p>SVGElement, 当前视窗(viewport) 建立的 SVGElement, 通常是最近的<svg>祖先元素, 如果给定元素是最外层的<svg>, 则返回null</svg></svg></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<p>The SVGElement interface doesn’t provide any additional methods, but inherits methods from its parent, Element.   </p>
+</blockquote>
+<p>SVGElement 接口没有提供额外方法, 只继承自 Element 的方法</p>
 
       
     </div>
@@ -609,15 +214,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/开发自己的划词翻译工具/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/snap笔记/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/开发自己的划词翻译工具/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.142Z">
-          2018-04-15
+      <a href="/2018/05/02/snap笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.602Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -629,18 +234,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="开发自己的划词翻译工具"><a href="#开发自己的划词翻译工具" class="headerlink" title="开发自己的划词翻译工具"></a>开发自己的划词翻译工具</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
-<li>win10/win7</li>
-<li>剪切板划词</li>
-<li>调用api 进行翻译/查词</li>
-<li>选择语义/自定义语义</li>
-<li>记录查词时间</li>
-<li>生成单词本<h2 id="语言环境"><a href="#语言环境" class="headerlink" title="语言环境"></a>语言环境</h2></li>
-</ol>
-<ul>
-<li>python</li>
-<li>pyqt库</li>
-</ul>
+        <h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="node"><a href="#node" class="headerlink" title="node"></a>node</h4><blockquote>
+<p>Gives you a reference to the DOM object, so you can assign event handlers or just mess around.    </p>
+</blockquote>
+<p>最初是 <code>document.querySelector(...);</code> 之后添加了一些内容<br>用例1. 画一个(10, 10)半径为10的圆, 点击变红 (来自snap.js的注释)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// draw a circle at coordinate 10,10 with radius of 10</span></span><br><span class="line"><span class="keyword">var</span> c = paper.circle(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">c.node.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    c.attr(<span class="string">"fill"</span>, <span class="string">"red"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><blockquote>
+<p>SVG tag name of the given element.   </p>
+</blockquote>
+<p>最初是: <code>this.type = el.tagName || el.nodeName;</code></p>
 
       
     </div>
@@ -666,15 +267,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/今日完成20180206/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/snap.js读码(一)/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/今日完成20180206/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.134Z">
-          2018-04-15
+      <a href="/2018/05/02/snap.js读码(一)/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.593Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -686,23 +287,74 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="今日完成"><a href="#今日完成" class="headerlink" title="今日完成:"></a>今日完成:</h1><ul>
-<li>看书到20:00</li>
-<li>安装破解版markdownpad</li>
-<li>看solo文档, 准备部署</li>
-<li>安装python的win32包(昨天耽误一个点, 只差一个重启电脑)</li>
-<li>虚拟机win10优化</li>
-<li>看git上的js工具代码 on 和trigger实现(感觉这个流程跑下来再啃jquery无压力了)并写了文档</li>
-<li>看git上的键盘记录器源码, pyhook教程</li>
-<li>w3cschool编程实战练习(准备考认证喽@胖纸)</li>
-</ul>
-<p>总结:   </p>
-<ul>
-<li>动手的少.  </li>
-<li>我的单片机开发板到了, 感谢张总把12楼赵哥找来帮忙安刷卡机器, 感谢12楼赵哥</li>
-<li>最近对java很感兴趣, 用java写小东西啦(可能是我终于大概了解一点部署java环境的原理了吧)  </li>
-<li>为明天不能参加培训表示心痛的遗憾~~~</li>
-</ul>
+        <h1 id="snap-js-阅读"><a href="#snap-js-阅读" class="headerlink" title="snap.js 阅读"></a>snap.js 阅读</h1><h2 id="Snap-“-svg1”"><a href="#Snap-“-svg1”" class="headerlink" title="Snap(“#svg1”)"></a>Snap(“#svg1”)</h2><h3 id="0-大致结构-两个自执行函数"><a href="#0-大致结构-两个自执行函数" class="headerlink" title="0. 大致结构: 两个自执行函数"></a>0. 大致结构: 两个自执行函数</h3><p>看了注释后一个是eve(javascript 事件库), 一个是snap</p>
+<h3 id="1-入口"><a href="#1-入口" class="headerlink" title="1. 入口"></a>1. 入口</h3><p>var svg1 = Snap(‘#svg1’);</p>
+<p>观察代码, 简化后运行的顺序应该是:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">glob, factory</span>)</span>&#123;</span><br><span class="line">    factory(glob);</span><br><span class="line">&#125;)(<span class="built_in">window</span> || <span class="keyword">this</span>, <span class="function"><span class="keyword">function</span>(<span class="params">window</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> Snap = (<span class="function"><span class="keyword">function</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Snap</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'success'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> glob = &#123;</span><br><span class="line">            win: root.window,</span><br><span class="line">            doc: root.window.document</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        glob.win.Snap = Snap;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Snap;</span><br><span class="line">    &#125;)(<span class="built_in">window</span> || <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Snap</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">    Snap();</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-snap"><a href="#2-snap" class="headerlink" title="2. snap()"></a>2. snap()</h3><p>所以程序应该是直接进入到了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Snap</span>(<span class="params">w, h</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (w) &#123;</span><br><span class="line">        <span class="keyword">if</span> (w.nodeType) &#123;</span><br><span class="line">            <span class="keyword">return</span> wrap(w);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (is(w, <span class="string">"array"</span>) &amp;&amp; Snap.set) &#123;</span><br><span class="line">            <span class="keyword">return</span> Snap.set.apply(Snap, w);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w <span class="keyword">instanceof</span> Element) &#123;</span><br><span class="line">            <span class="keyword">return</span> w;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (h == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                w = glob.doc.querySelector(<span class="built_in">String</span>(w));</span><br><span class="line">                <span class="keyword">return</span> wrap(w);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    w = w == <span class="literal">null</span> ? <span class="string">"100%"</span> : w;</span><br><span class="line">    h = h == <span class="literal">null</span> ? <span class="string">"100%"</span> : h;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Paper(w, h);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>由于我传入的是”#svg1”, 所以直接执行的是<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> w = glob.doc.querySelector(<span class="built_in">String</span>(w));</span><br><span class="line"><span class="comment">// w = window.document.querySelector(String('#svg1'));</span></span><br><span class="line"> <span class="keyword">return</span> wrap(w);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-wrap"><a href="#3-wrap" class="headerlink" title="3. wrap"></a>3. wrap</h3><p>找到wrap定义<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">wrap</span>(<span class="params">dom</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!dom) &#123;</span><br><span class="line">        <span class="keyword">return</span> dom;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dom <span class="keyword">instanceof</span> Element || dom <span class="keyword">instanceof</span> Fragment) &#123;</span><br><span class="line">        <span class="keyword">return</span> dom;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dom.tagName &amp;&amp; dom.tagName.toLowerCase() == <span class="string">"svg"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Paper(dom);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dom.tagName &amp;&amp; dom.tagName.toLowerCase() == <span class="string">"object"</span> &amp;&amp; dom.type == <span class="string">"image/svg+xml"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Paper(dom.contentDocument.getElementsByTagName(<span class="string">"svg"</span>)[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Element(dom);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在wrap里分类了一下, 我们的程序走的是’svg’<br>所以直接调用了 <code>new Paper(dom);</code></p>
+<p>目前为止程序实质上比调用时执行了:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w = <span class="built_in">window</span>.document.querySelector(<span class="built_in">String</span>(<span class="string">'#svg1'</span>));</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-paper-参数-w-‘-svg1’-h-未传入"><a href="#4-paper-参数-w-‘-svg1’-h-未传入" class="headerlink" title="4. paper(); 参数: w - ‘#svg1’, h - 未传入"></a>4. paper(); 参数: w - ‘#svg1’, h - 未传入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Paper</span>(<span class="params">w, h</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res,</span><br><span class="line">        desc,</span><br><span class="line">        defs,</span><br><span class="line">        proto = Paper.prototype;</span><br><span class="line">    <span class="keyword">if</span> (w &amp;&amp; w.tagName &amp;&amp; w.tagName.toLowerCase() == <span class="string">"svg"</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (w.snap <span class="keyword">in</span> hub) &#123;</span><br><span class="line">            <span class="keyword">return</span> hub[w.snap];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> doc = w.ownerDocument;</span><br><span class="line">        res = <span class="keyword">new</span> Element(w);</span><br><span class="line">        desc = w.getElementsByTagName(<span class="string">"desc"</span>)[<span class="number">0</span>];</span><br><span class="line">        defs = w.getElementsByTagName(<span class="string">"defs"</span>)[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span> (!desc) &#123;</span><br><span class="line">            desc = $(<span class="string">"desc"</span>);</span><br><span class="line">            desc.appendChild(doc.createTextNode(<span class="string">"Created with Snap"</span>));</span><br><span class="line">            res.node.appendChild(desc);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!defs) &#123;</span><br><span class="line">            defs = $(<span class="string">"defs"</span>);</span><br><span class="line">            res.node.appendChild(defs);</span><br><span class="line">        &#125;</span><br><span class="line">        res.defs = defs;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> proto) <span class="keyword">if</span> (proto[has](key)) &#123;</span><br><span class="line">            res[key] = proto[key];</span><br><span class="line">        &#125;</span><br><span class="line">        res.paper = res.root = res;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res = make(<span class="string">"svg"</span>, glob.doc.body);</span><br><span class="line">        $(res.node, &#123;</span><br><span class="line">            height: h,</span><br><span class="line">            version: <span class="number">1.1</span>,</span><br><span class="line">            width: w,</span><br><span class="line">            xmlns: xmlns</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>粗略上看: 进选择(属于svg元素),   执行 <code>res = new Element(w);</code> 后面判断修改了一下(判断是否有defs和desc, 如果没有获取该元素- [用getElementsByTagName 和 appendChild 的原生js] -) 就加一个新的(这里的$(‘desc’) 先暂时不研究, 后面再看), 最后返回 res<br>所以好像就差最后一步的样子, 即: <code>new Element(w)</code>; </p>
+<p>注意 这里有代码, 定义了res 的一些属性 如 ‘key’指向(paper原型自带的属性 这个时候的paper的原型还是object), paper, root 都是指向本身,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> proto) <span class="keyword">if</span> (proto[has](key)) &#123;</span><br><span class="line">    res[key] = proto[key];</span><br><span class="line">&#125;</span><br><span class="line">res.paper = res.root = res;</span><br></pre></td></tr></table></figure></p>
+<p>所以到这一步(已经看了$(“defs”)的含义, 所以代码执行的步骤可以简化为)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">w = <span class="built_in">document</span>.querySelector(<span class="built_in">String</span>(<span class="string">'#svg1'</span>));</span><br><span class="line">res = <span class="keyword">new</span> Element(w);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加 defs 和 desc</span></span><br><span class="line">xmlns = <span class="string">"http://www.w3.org/2000/svg"</span>;</span><br><span class="line">defs = <span class="built_in">document</span>.createElementNS(xmlns, <span class="string">"defs"</span>);</span><br><span class="line">desc = <span class="built_in">document</span>.createElementNS(xmlns, <span class="string">"desc"</span>);</span><br><span class="line">desc.appendChild(doc.createTextNode(<span class="string">"Created with Snap"</span>));</span><br><span class="line">res.node.appendChild(desc);</span><br><span class="line">res.node.appendChild(defs);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> res;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-new-Element-w-参数-w-为-‘-svg1’"><a href="#5-new-Element-w-参数-w-为-‘-svg1’" class="headerlink" title="5. new Element(w) 参数: w 为 ‘#svg1’"></a>5. new Element(w) 参数: w 为 ‘#svg1’</h3><p>只摘取此种调用情况涉及的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Element</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.node = el;   </span><br><span class="line">    <span class="keyword">this</span>.type = el.tagName || el.nodeName;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> id = <span class="keyword">this</span>.id = ID(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.anims = &#123;&#125;;</span><br><span class="line">    <span class="keyword">this</span>._ = &#123;</span><br><span class="line">        transform: []</span><br><span class="line">    &#125;;</span><br><span class="line">    el.snap = id;</span><br><span class="line">    hub[id] = <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上就是一个普通的<svg>标签初始化的过程. 将 snap 的 Element 与 dom 关联上, 并做了一些属性和全局变量的注册 (后面应该还会有定义方法和属性, 这样就可以直接使用了)</svg></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Snap(‘#svg1’)执行的顺序大致是 </p>
+<blockquote>
+<p>snap() -&gt; wrap() -&gt; paper() -&gt; element()</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="1"><a href="#1" class="headerlink" title="1. $()"></a>1. $()</h3><p>调用范例:<br><code>$(&quot;desc&quot;);</code><br><code>$(&quot;defs&quot;);</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xmlns = <span class="string">"http://www.w3.org/2000/svg"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">el, attr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (attr) &#123;...&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        el = glob.doc.createElementNS(xmlns, el);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> el;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单独传参的话, 调用的是<code>document.createElementNS(xmlns, el)</code>;</p>
+<h3 id="is"><a href="#is" class="headerlink" title="is()"></a>is()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">o, type</span>) </span>&#123;</span><br><span class="line">    type = Str.prototype.toLowerCase.call(type);</span><br><span class="line">    <span class="keyword">if</span> (type == <span class="string">"finite"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isFinite</span>(o);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (type == <span class="string">"array"</span> &amp;&amp;</span><br><span class="line">        (o <span class="keyword">instanceof</span> <span class="built_in">Array</span> || <span class="built_in">Array</span>.isArray &amp;&amp; <span class="built_in">Array</span>.isArray(o))) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>  type == <span class="string">"null"</span> &amp;&amp; o === <span class="literal">null</span> ||</span><br><span class="line">        type == <span class="keyword">typeof</span> o &amp;&amp; o !== <span class="literal">null</span> ||</span><br><span class="line">        type == <span class="string">"object"</span> &amp;&amp; o === <span class="built_in">Object</span>(o) ||</span><br><span class="line">        objectToString.call(o).slice(<span class="number">8</span>, <span class="number">-1</span>).toLowerCase() == type;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js数据类型/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js数据类型/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.566Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>));    <span class="comment">//NaN就是Not-A-Number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">undefined</span>));<span class="comment">//undefined什么都不是，当然也Not-A-Number.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">null</span>));<span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">""</span>));  <span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(&#123;&#125;));  <span class="comment">// 相当于undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>([]));  <span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Object</span>()));  <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">String</span>()));  <span class="comment">//能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"a"</span>))); <span class="comment">//转成字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Array</span>()));  <span class="comment">//能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Date</span>()));  <span class="comment">//能转成数字</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().toString()));  <span class="comment">//转成字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">true</span>));<span class="comment">//能转成1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">0</span>/<span class="number">0</span>)); <span class="comment">//结果就是NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="isFinite"><a href="#isFinite" class="headerlink" title="isFinite"></a>isFinite</h2><h2 id="轮子-判断对象类型"><a href="#轮子-判断对象类型" class="headerlink" title="轮子, 判断对象类型"></a>轮子, 判断对象类型</h2><p>最后一句似懂非懂啊<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">o, type</span>) </span>&#123;</span><br><span class="line">            type = Str.prototype.toLowerCase.call(type);</span><br><span class="line">	<span class="keyword">if</span> (type == <span class="string">"finite"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">isFinite</span>(o);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (type == <span class="string">"array"</span> &amp;&amp;</span><br><span class="line">		(o <span class="keyword">instanceof</span> <span class="built_in">Array</span> || <span class="built_in">Array</span>.isArray &amp;&amp; <span class="built_in">Array</span>.isArray(o))) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>  type == <span class="string">"null"</span> &amp;&amp; o === <span class="literal">null</span> ||</span><br><span class="line">		type == <span class="keyword">typeof</span> o &amp;&amp; o !== <span class="literal">null</span> ||</span><br><span class="line">		type == <span class="string">"object"</span> &amp;&amp; o === <span class="built_in">Object</span>(o) ||</span><br><span class="line">		<span class="built_in">Object</span>.prototype.toString.call(o).slice(<span class="number">8</span>, <span class="number">-1</span>).toLowerCase() == type;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -728,15 +380,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/计算机英语-摘录版/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/js的call的理解/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/计算机英语-摘录版/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:21.116Z">
-          2018-04-15
+      <a href="/2018/05/02/js的call的理解/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.557Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -748,10 +400,201 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="计算机英语"><a href="#计算机英语" class="headerlink" title="计算机英语"></a>计算机英语</h1><p>policy: 政策, 策略<br>product: 产品<br>project: 项目<br>delay: 延迟<br>Update: 更新<br>Solution：解决方案<br>Resource：资源<br>Review：检查一下或者回顾一下</p>
-<p>API：Application Programming Interface 应用编程接口<br>Coding：编码工作<br>WebBase：Web应用程序<br>Quality：质量<br>On-line：在线的<br>Handbook：手册<br>License：许可证<br>On-site：现场服务<br>Report：报告<br>Version：版本</p>
-<p>gateway: 网关<br>Router：路由器<br>HUB: 集线器<br>Switch: 交换机</p>
-<p>命名相关词汇:<br>Order: 订单<br>price: 价格<br>list price: 官方报价<br>customer: 客户<br>partner: 合作伙伴<br>billing: 计费</p>
+        <h1 id="js的call-的理解"><a href="#js的call-的理解" class="headerlink" title="js的call()的理解"></a>js的call()的理解</h1><p>之前也总是碰到, 然后每次都百度一下, 结果每次都是看似懂了然后之后又忘了. 觉得是一个难以越过的高山一样?</p>
+<p>这次看了基础的教程.</p>
+<p>个人理解就是对象A的方法, 用的参数是A的属性, 现在想用这个方法, 但是用的参数是别的对象的.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">        firstName : <span class="string">"John"</span>,</span><br><span class="line">        lastName : <span class="string">"Doe"</span>,</span><br><span class="line">        fullName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">"  "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> myObject = &#123;</span><br><span class="line">        firstName : <span class="string">"Mary"</span>,</span><br><span class="line">        lastName: <span class="string">"Doe"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(person.fullName.call(myObject));</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(person.fullName());</span><br></pre></td></tr></table></figure></p>
+<h2 id="call-的一些用例"><a href="#call-的一些用例" class="headerlink" title="call 的一些用例"></a>call 的一些用例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"ABC"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.toLowerCase());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.prototype.toLowerCase.call(<span class="string">"EFgG"</span>));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js_tagName与nodeName的区别/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js_tagName与nodeName的区别/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.547Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js-tagName-与-nodeName-的区别"><a href="#js-tagName-与-nodeName-的区别" class="headerlink" title="js: tagName 与 nodeName 的区别"></a>js: tagName 与 nodeName 的区别</h1><p>DOM 节点类型有12种<br>常见的有:<br>元素节点, 属性节点, 文本节点    </p>
+<p>nodeName 返回节点名 (node 接口)<br>tagName 返回元素的标签名 (element 接口)<br>所有节点继承 node, 元素节点还继承了 element(element 继承自 node 及其扩展接口 EventTarget)<br>同时作用在元素节点时效果一样   </p>
+<h2 id="附"><a href="#附" class="headerlink" title="附"></a>附</h2><h3 id="1-12中类型"><a href="#1-12中类型" class="headerlink" title="1. 12中类型"></a>1. 12中类型</h3><p>元素节点            　　Node.ELEMENT_NODE(1)<br>属性节点            　　Node.ATTRIBUTE_NODE(2)<br>文本节点            　　Node.TEXT_NODE(3)<br>CDATA节点             Node.CDATA_SECTION_NODE(4)<br>实体引用名称节点    　　 Node.ENTRY_REFERENCE_NODE(5)<br>实体名称节点        　　Node.ENTITY_NODE(6)<br>处理指令节点        　　Node.PROCESSING_INSTRUCTION_NODE(7)<br>注释节点            　 Node.COMMENT_NODE(8)<br>文档节点            　 Node.DOCUMENT_NODE(9)<br>文档类型节点        　　Node.DOCUMENT_TYPE_NODE(10)<br>文档片段节点        　　Node.DOCUMENT_FRAGMENT_NODE(11)<br>DTD声明节点            Node.NOTATION_NODE(12)</p>
+<h3 id="关于node-接口"><a href="#关于node-接口" class="headerlink" title="关于node 接口"></a>关于node 接口</h3><p>nodeName 节点名称<br>nodeValue 节点值(字符串)</p>
+<h3 id="关于元素节点"><a href="#关于元素节点" class="headerlink" title="关于元素节点"></a>关于元素节点</h3><p>节点类型nodeType 值为 1<br>nodeName: 大写标签名<br>nodeValue: null</p>
+<h3 id="参考与感谢"><a href="#参考与感谢" class="headerlink" title="参考与感谢"></a>参考与感谢</h3><p><a href="https://blog.csdn.net/borishuai/article/details/5719227" target="_blank" rel="noopener">https://blog.csdn.net/borishuai/article/details/5719227</a><br><a href="http://www.cnblogs.com/xiaohuochai/p/5785189.html" target="_blank" rel="noopener">http://www.cnblogs.com/xiaohuochai/p/5785189.html</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/dom/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/dom/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.523Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="querySelector-与-querySelectorAll"><a href="#querySelector-与-querySelectorAll" class="headerlink" title="querySelector() 与 querySelectorAll()"></a>querySelector() 与 querySelectorAll()</h2><p>回文档中匹配指定 CSS 选择器的一个元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(x.querySelector(<span class="string">".demo"</span>));</span><br><span class="line">x.querySelector(<span class="string">".demo"</span>).innerHTML = <span class="string">"Hello World!"</span>;</span><br><span class="line">x.querySelectorAll(<span class="string">".demo"</span>)[<span class="number">0</span>].style.color = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// querySelectorAll 返回的是一个 Static Node List</span></span><br><span class="line"><span class="comment">// getElementBy 返回的是一个 Live Node List</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="ownerDocument-返回元素的根元素"><a href="#ownerDocument-返回元素的根元素" class="headerlink" title="ownerDocument 返回元素的根元素"></a>ownerDocument 返回元素的根元素</h2><p>不知道用途是什么, 猜测可能是在复杂的作用域中找到document对象(更像是在修补bug?)</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js读代码的一些摘抄/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js读代码的一些摘抄/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.477Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js-读代码的一些摘抄"><a href="#js-读代码的一些摘抄" class="headerlink" title="js 读代码的一些摘抄"></a>js 读代码的一些摘抄</h1><h2 id="生成id"><a href="#生成id" class="headerlink" title="生成id"></a>生成id</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">idgen = <span class="number">0</span>,</span><br><span class="line">idprefix = <span class="string">"S"</span> + (+<span class="keyword">new</span> <span class="built_in">Date</span>).toString(<span class="number">36</span>),</span><br><span class="line">ID = <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (el &amp;&amp; el.type ? el.type : E) + idprefix + (idgen++).toString(<span class="number">36</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="简单短路"><a href="#简单短路" class="headerlink" title="简单短路"></a>简单短路</h2><p>如果变量a 存在 则使用a<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attr &amp;&amp; el.attr(attr)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js笔记/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.467Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js笔记"><a href="#js笔记" class="headerlink" title="js笔记"></a>js笔记</h1><h2 id="2018年4月19日"><a href="#2018年4月19日" class="headerlink" title="2018年4月19日"></a>2018年4月19日</h2><h3 id="Object-prototype-hasOwnProperty"><a href="#Object-prototype-hasOwnProperty" class="headerlink" title="Object.prototype.hasOwnProperty()"></a>Object.prototype.hasOwnProperty()</h3><p>hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="string">"hasOwnProperty"</span>](<span class="number">5</span>));</span><br></pre></td></tr></table></figure></p>
+<p>正常用法是a.hasOwnProperty(5) 但是 属性可以用数组下标的方式表示(甚至更全面?), 所以才会有上面的用法</p>
 
       
     </div>

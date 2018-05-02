@@ -59,15 +59,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/mave笔记/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/开发自己的划词翻译工具/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/mave笔记/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.986Z">
-          2018-04-15
+      <a href="/2018/05/02/开发自己的划词翻译工具/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.685Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -79,116 +79,80 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="maven-笔记"><a href="#maven-笔记" class="headerlink" title="maven 笔记"></a>maven 笔记</h1><h2 id="一-使用层面清单"><a href="#一-使用层面清单" class="headerlink" title="一. 使用层面清单"></a>一. 使用层面清单</h2><ol>
-<li>下载配置</li>
-<li>创建maven项目</li>
-<li>eclipse maven</li>
-<li>pom.xml添加包和手动添加依赖(src\lib)</li>
-<li>创建与导入</li>
-<li>IDEA maven</li>
+        <h1 id="开发自己的划词翻译工具"><a href="#开发自己的划词翻译工具" class="headerlink" title="开发自己的划词翻译工具"></a>开发自己的划词翻译工具</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>win10/win7</li>
+<li>剪切板划词</li>
+<li>调用api 进行翻译/查词</li>
+<li>选择语义/自定义语义</li>
+<li>记录查词时间</li>
+<li>生成单词本<h2 id="语言环境"><a href="#语言环境" class="headerlink" title="语言环境"></a>语言环境</h2></li>
 </ol>
-<h2 id="二-理解层面"><a href="#二-理解层面" class="headerlink" title="二. 理解层面"></a>二. 理解层面</h2><h3 id="1-工程目录"><a href="#1-工程目录" class="headerlink" title="(1). 工程目录"></a>(1). 工程目录</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>source code</td>
-<td>/src/main/java</td>
-</tr>
-<tr>
-<td>resources</td>
-<td>/src/main/resources</td>
-</tr>
-<tr>
-<td>Tests</td>
-<td>/src/test</td>
-</tr>
-<tr>
-<td>Complied byte code</td>
-<td>/target</td>
-</tr>
-<tr>
-<td>distributable JAR</td>
-<td>/targer/classes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。"><a href="#groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。" class="headerlink" title="groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。"></a>groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。</h3><h3 id="2-生命周期"><a href="#2-生命周期" class="headerlink" title="(2). 生命周期"></a>(2). 生命周期</h3><p>clean, default, site – 相互独立的</p>
-<h4 id="clean-移除所有上一次构建生成的文件"><a href="#clean-移除所有上一次构建生成的文件" class="headerlink" title="clean 移除所有上一次构建生成的文件"></a>clean 移除所有上一次构建生成的文件</h4><ol>
-<li>pre 生命周期</li>
-<li>生命周期</li>
-<li>post 生命周期  </li>
-</ol>
-<p>运行post 生命周期名 会执行1, 2, 3步</p>
-<h4 id="site-生成项目站点文档并部署到特定的服务器上"><a href="#site-生成项目站点文档并部署到特定的服务器上" class="headerlink" title="site 生成项目站点文档并部署到特定的服务器上"></a>site 生成项目站点文档并部署到特定的服务器上</h4><h3 id="3-仓库"><a href="#3-仓库" class="headerlink" title="(3). 仓库"></a>(3). 仓库</h3><ol>
-<li>本地仓库</li>
-<li>中央仓库 (maven社区管理的常用库)</li>
-<li>远程仓库<br>顺序 : 本地 -&gt; 中央 -&gt; 远程</li>
-</ol>
-<h3 id="4-插件"><a href="#4-插件" class="headerlink" title="(4). 插件"></a>(4). 插件</h3><p>Maven 实际上是一个依赖插件执行的框架, 插件主要用途</p>
 <ul>
-<li>创建 jar 文件</li>
-<li>创建 war 文件</li>
-<li>编译代码文件</li>
-<li>代码单元测试</li>
-<li>创建工程文档</li>
-<li>创建工程报告<br>在pom.xml用法<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-antrun-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">id</span>&gt;</span>id.clean<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">phase</span>&gt;</span>clean<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>run<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">tasks</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">echo</span>&gt;</span>clean phase<span class="tag">&lt;/<span class="name">echo</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">tasks</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">execution</span>&gt;</span>     </span><br><span class="line">                <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>python</li>
+<li>pyqt库</li>
 </ul>
-<h3 id="5-创建工程"><a href="#5-创建工程" class="headerlink" title="(5). 创建工程"></a>(5). 创建工程</h3><p>Maven 使用原型（archetype）插件创建工程。要创建一个简单的 Java 应用，我们将使用 maven-archetype-quickstart 插件。  </p>
-<h3 id="6-pom-xml解释"><a href="#6-pom-xml解释" class="headerlink" title="(6). pom.xml解释"></a>(6). pom.xml解释</h3><h4 id=""><a href="#" class="headerlink" title=""></a><dependency></dependency></h4><ul>
-<li>外部依赖（library jar location）能够像其他依赖一样在 pom.xml 中配置。<br>指定 groupId 为 library 的名称。 <code>&lt;groupId&gt;junit&lt;/groupId&gt;</code><br>指定 artifactId 为 library 的名称。   <code>&lt;artifactId&gt;junit&lt;/artifactId&gt;</code><br>指定作用域（scope）为系统。 <code>&lt;scope&gt;system&lt;/scope&gt;</code>, <code>&lt;scope&gt;test&lt;/scope&gt;</code><br>指定相对于工程位置的系统路径。 <code>&lt;systemPath&gt;${basedir}\src\lib\ldapjdk.jar&lt;/systemPath&gt;</code></li>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/今日完成20180206/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/今日完成20180206/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.681Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="今日完成"><a href="#今日完成" class="headerlink" title="今日完成:"></a>今日完成:</h1><ul>
+<li>看书到20:00</li>
+<li>安装破解版markdownpad</li>
+<li>看solo文档, 准备部署</li>
+<li>安装python的win32包(昨天耽误一个点, 只差一个重启电脑)</li>
+<li>虚拟机win10优化</li>
+<li>看git上的js工具代码 on 和trigger实现(感觉这个流程跑下来再啃jquery无压力了)并写了文档</li>
+<li>看git上的键盘记录器源码, pyhook教程</li>
+<li>w3cschool编程实战练习(准备考认证喽@胖纸)</li>
 </ul>
-<h4 id="工程文档-mvn-site"><a href="#工程文档-mvn-site" class="headerlink" title="工程文档 mvn site"></a>工程文档 <code>mvn site</code></h4><h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/maven-eclipse中html页面乱码/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/maven-eclipse中html页面乱码/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.964Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="maven-eclipse-中index-html页面乱码"><a href="#maven-eclipse-中index-html页面乱码" class="headerlink" title="maven-eclipse 中index.html页面乱码:"></a>maven-eclipse 中index.html页面乱码:</h1><p>pox.xml修改:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">argLine</span>&gt;</span>-Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>总结:   </p>
+<ul>
+<li>动手的少.  </li>
+<li>我的单片机开发板到了, 感谢张总把12楼赵哥找来帮忙安刷卡机器, 感谢12楼赵哥</li>
+<li>最近对java很感兴趣, 用java写小东西啦(可能是我终于大概了解一点部署java环境的原理了吧)  </li>
+<li>为明天不能参加培训表示心痛的遗憾~~~</li>
+</ul>
 
       
     </div>
@@ -214,15 +178,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/Markdownwin10安装及破解/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/计算机英语-摘录版/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/Markdownwin10安装及破解/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.957Z">
-          2018-04-15
+      <a href="/2018/05/02/计算机英语-摘录版/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.677Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -234,11 +198,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="MarkdownPad-win10安装及破解"><a href="#MarkdownPad-win10安装及破解" class="headerlink" title="MarkdownPad win10安装及破解"></a>MarkdownPad win10安装及破解</h1><p>###Step1. 解压MarkdownPad2<br><a href="https://pan.baidu.com/s/1eSKXqka" target="_blank" rel="noopener">资源地址</a><br><a href="https://pan.baidu.com/s/1nwwg8sT" target="_blank" rel="noopener">我的网盘备用地址</a></p>
-<p>###Step2. 绿色软件, 解压并运行输入注册码<br>Email:<br><a href="mailto:Soar360@live.com" target="_blank" rel="noopener">Soar360@live.com</a><br>key:<br>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==</p>
-<p>###Step3. win10 需要安装组件awesomium_v1.6.6_sdk_win(下载后运行安装程序)<br><a href="https://pan.baidu.com/s/1qY7LKba" target="_blank" rel="noopener">下载地址</a><br><a href="">我的网盘备用地址</a></p>
-<p>###Step4. 汉化: tools -&gt; options 修改</p>
-<p>###Step5. 重启安装成功</p>
+        <h1 id="计算机英语"><a href="#计算机英语" class="headerlink" title="计算机英语"></a>计算机英语</h1><p>policy: 政策, 策略<br>product: 产品<br>project: 项目<br>delay: 延迟<br>Update: 更新<br>Solution：解决方案<br>Resource：资源<br>Review：检查一下或者回顾一下</p>
+<p>API：Application Programming Interface 应用编程接口<br>Coding：编码工作<br>WebBase：Web应用程序<br>Quality：质量<br>On-line：在线的<br>Handbook：手册<br>License：许可证<br>On-site：现场服务<br>Report：报告<br>Version：版本</p>
+<p>gateway: 网关<br>Router：路由器<br>HUB: 集线器<br>Switch: 交换机</p>
+<p>命名相关词汇:<br>Order: 订单<br>price: 价格<br>list price: 官方报价<br>customer: 客户<br>partner: 合作伙伴<br>billing: 计费</p>
 
       
     </div>
@@ -264,15 +227,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/markdownpad破解说明(1)/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/计算机英语(1)/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/markdownpad破解说明(1)/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.937Z">
-          2018-04-15
+      <a href="/2018/05/02/计算机英语(1)/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.673Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -284,244 +247,388 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="MarkdownPad-专业版汉化激活教程"><a href="#MarkdownPad-专业版汉化激活教程" class="headerlink" title="MarkdownPad 专业版汉化激活教程"></a>MarkdownPad 专业版汉化激活教程</h1><p><a href="http://pan.baidu.com/s/1mgjvk9q" target="_blank" rel="noopener">百度网盘</a></p>
+        <ul>
+<li>criteria 标准</li>
+<li>capacity 容量</li>
+<li>parentheses  括号</li>
+<li>functionality  功能</li>
+<li>retrieve  检索</li>
+<li>primitive  原始的</li>
+<li>delimit 分隔</li>
+<li>graphic  图像</li>
+<li>revert  还原</li>
+<li>screw things up 搞砸了, 乱来一气</li>
+<li>concept 概念</li>
+<li>artificial intelligence AI</li>
+<li>notation 符号</li>
+<li>algebra代数学</li>
+<li>equations 方程</li>
+<li>differential calculus 微分学</li>
+<li>derivative 导数</li>
+<li>optimization 最优化</li>
+<li>linear algebra 线性代数</li>
+<li>matrix 矩阵</li>
+<li>statistics 统计学</li>
+<li>probability 概率</li>
+<li>variable 变量</li>
+<li>coefficient 系数</li>
+<li>constant 常数</li>
+<li>opposite 相反的</li>
+<li>subtract 减法</li>
+<li>negative 负的</li>
+</ul>
+<hr>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/环境部署清单/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/环境部署清单/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.668Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="环境部署清单"><a href="#环境部署清单" class="headerlink" title="环境部署清单"></a>环境部署清单</h1><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><h4 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h4><ul>
+<li>win10 开发专用</li>
+<li>win10净版</li>
+<li>win7</li>
+<li>xp</li>
+</ul>
+<p>####Linux</p>
+<ul>
+<li>Cenos</li>
+<li>Unbunto</li>
+<li>Kali Linux</li>
+</ul>
+<h3 id="环境部署"><a href="#环境部署" class="headerlink" title="环境部署"></a>环境部署</h3><ul>
+<li>python</li>
+<li>java web</li>
+<li>php</li>
+<li>nodejs</li>
+<li>android</li>
+<li>c</li>
+<li>docker</li>
+<li>scheme lisp</li>
+<li>微信web开发者工具</li>
+</ul>
+<h3 id="破解软件安装"><a href="#破解软件安装" class="headerlink" title="破解软件安装"></a>破解软件安装</h3><p>###</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/帆软报表相关/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/帆软报表相关/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.664Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> V_TK_USERLEDGERINFO </span><br><span class="line">$&#123;<span class="keyword">if</span>(<span class="keyword">len</span>(<span class="keyword">time</span>) == <span class="number">0</span>, <span class="string">"where 1=1"</span> + </span><br><span class="line">$&#123; <span class="keyword">if</span>(<span class="keyword">len</span>(username) == <span class="number">0</span>,<span class="string">""</span>,<span class="string">" and username='"</span> + username +<span class="string">"' "</span>) &#125; </span><br><span class="line">$&#123;<span class="keyword">if</span>(<span class="keyword">len</span>(userpos) == <span class="number">0</span>,<span class="string">""</span>,<span class="string">" and username='"</span> + userpos +<span class="string">"' "</span>)&#125; </span><br><span class="line">$&#123;<span class="keyword">if</span>(<span class="keyword">len</span>(trainname) == <span class="number">0</span>,<span class="string">""</span>,<span class="string">" and username='"</span> + trainname +<span class="string">"' "</span>)&#125; </span><br><span class="line">+ <span class="string">""</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">" time &gt;' "</span> + time1 + <span class="string">" '  and time &lt; '"</span> + time2 <span class="string">" '"</span> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/读js_为元素添加trigger方法/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/读js_为元素添加trigger方法/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.650Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js-为元素添加trigger方法"><a href="#js-为元素添加trigger方法" class="headerlink" title="js: 为元素添加trigger方法"></a>js: 为元素添加trigger方法</h1><p>##<code>[][&#39;forEach&#39;].call(..){....}</code>理解</p>
+<h3 id="的含义"><a href="#的含义" class="headerlink" title="[]的含义"></a><code>[]</code>的含义</h3><blockquote>
+<p>[]是一个数组，这个数组根本不用，它被放在页面上，因为使用数组可以访问数组原型，例如.forEach。</p>
+</blockquote>
+<blockquote>
+<p>这比打字更快 Array.prototype.forEach.call(…)；</p>
+</blockquote>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><blockquote>
+<p>forEach是将函数作为输入的函数…</p>
+</blockquote>
+<p>  `</p>
+<blockquote>
+<p>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。<br>注意: forEach() 对于空数组是不会执行回调函数的。</p>
+</blockquote>
+<h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3><blockquote>
+<p>官方说法是: 调用一个对象的一个方法，以另一个对象替换当前对象。</p>
+</blockquote>
+<p>比较难懂, 推荐看<a href="http://blog.csdn.net/longjuesi/article/details/29859599" target="_blank" rel="noopener">博客地址</a>来理解</p>
+<p>参考:</p>
+<blockquote>
+<p><a href="http://www.runoob.com/jsref/jsref-foreach.html" target="_blank" rel="noopener">http://www.runoob.com/jsref/jsref-foreach.html</a><br><a href="https://www.cnblogs.com/yanxiaoluo/p/7605850.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanxiaoluo/p/7605850.html</a><br><a href="http://blog.csdn.net/ywl570717586/article/details/52681392" target="_blank" rel="noopener">http://blog.csdn.net/ywl570717586/article/details/52681392</a><br><a href="http://blog.csdn.net/longjuesi/article/details/29859599" target="_blank" rel="noopener">http://blog.csdn.net/longjuesi/article/details/29859599</a> </p>
+</blockquote>
+<p>代码地址: <a href="https://github.com/limingziqiang/functions/blob/master/ElementTrigger.js" target="_blank" rel="noopener">https://github.com/limingziqiang/functions/blob/master/ElementTrigger.js</a> </p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/单片机笔记/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/单片机笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.638Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="单片机笔记"><a href="#单片机笔记" class="headerlink" title="单片机笔记"></a>单片机笔记</h1><p>##目录</p>
+<ul>
+<li>单片机型号</li>
+<li>开发板介绍</li>
+<li>HC6800-ES V2.0开发板所能实现的功能</li>
+<li>知识要点</li>
+<li>课程目录</li>
+<li>实验程序目录</li>
+<li>学习路径</li>
+<li>安装单片机</li>
+</ul>
+<h2 id="单片机型号-STC89C52-内存8KB-开发板型号-HC6800-ES-V2-0"><a href="#单片机型号-STC89C52-内存8KB-开发板型号-HC6800-ES-V2-0" class="headerlink" title="单片机型号: STC89C52 内存8KB 开发板型号: HC6800-ES V2.0"></a>单片机型号: STC89C52 内存8KB 开发板型号: HC6800-ES V2.0</h2><h2 id="开发板介绍-之TODO-补上每个接口干嘛用的"><a href="#开发板介绍-之TODO-补上每个接口干嘛用的" class="headerlink" title="开发板介绍(之TODO: 补上每个接口干嘛用的)"></a>开发板介绍(之TODO: 补上每个接口干嘛用的)</h2><p><img src="https://i.imgur.com/jHKmFiu.jpg" alt="开发板结构"></p>
 <ol>
-<li>解压压缩包, 解压Pa_ttrar.rar激活工具</li>
-<li>patch -&gt; YES</li>
-<li><p>选择文件: 找到</p>
-<pre><code>C:\Users\Administrator\AppData\Local\MarkdownPad 2
-</code></pre><p>目录下的<code>markdownpad2.log</code>文件</p>
-</li>
-<li>破解成功</li>
-<li>汉化: 工具 -&gt; 选项 -&gt; 中文</li>
+<li>超声波模块接口  </li>
+<li>NRF24L01无线模块接口  </li>
+<li>无源蜂鸣器   </li>
+<li>DS18B20温度传感器接口  </li>
+<li>红外接收头  </li>
+<li>电源开关  </li>
+<li>自动下载电路（CH340转换芯片）  </li>
+<li>miniUSB接口（兼容安卓手机数据线，既可供电又可下载程序，还能串口通信）  </li>
+<li>ISP下载接口（为AT及AVR系列单片机下载）  </li>
+<li>复位按键  </li>
+<li>LCD12864模块接口  </li>
+<li>LCD1602模块接口  </li>
+<li>数码管模块（2个四位一体共阴数码管）  </li>
+<li>DS1302时钟模块  </li>
+<li>LED模块（8个LED）  </li>
+<li>独立按键模块（4个独立按键）  </li>
+<li>单片机所有IO口（方便用户外扩功能模块）  </li>
+<li>单片机紧缩座（出厂时安装STC89C52单片机）  </li>
+<li>矩阵按键模块</li>
+<li>8*8LED点阵模块（可显示字符及简单汉字）  </li>
+<li>74HC245芯片（驱动数码管模块）  </li>
+<li>步进电机模块（五线四项步进电机，驱动芯片ULN2003，也可驱动直流电机）  </li>
+<li>74HC138译码器芯片（控制数码管位选）  </li>
+<li>EEPROM模块（24C02芯片）  </li>
+<li>74HC595模块（内含8个LED）  </li>
+<li>AD/DA模块  </li>
 </ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/ligerui弹出窗/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/ligerui弹出窗/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.930Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ligerDialog.confirm(<span class="string">" 验证成功 "</span>+<span class="string">",是否继续操作"</span>,<span class="string">"提示信息"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">rtn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rtn)&#123;</span><br><span class="line">        <span class="keyword">this</span>.close();</span><br><span class="line">        <span class="comment">// window.location.reload();</span></span><br><span class="line">        <span class="comment">// window.location.href = window.location.href;</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = <span class="string">"$&#123;ctx&#125;/platform/system/sysUser/list.ws"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ligerDialog.alert(<span class="string">'验证失败'</span>,<span class="string">'出错了'</span>);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/js实时显示当前时间(格式化)/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/js实时显示当前时间(格式化)/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.921Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"clock"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">initArray</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.length=initArray.arguments.length</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>[i+<span class="number">1</span>]=initArray.arguments[i]</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> d=<span class="keyword">new</span> initArray(<span class="string">"星期日"</span>,<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>,<span class="string">"星期四"</span>,<span class="string">"星期五"</span>,<span class="string">"星期六"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> setClock = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(0);</span></span></span><br><span class="line"><span class="javascript">            today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> hours = today.getHours();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> minutes = today.getMinutes();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> seconds = today.getSeconds();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (hours &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                hours = <span class="string">"0"</span> + hours;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (minutes &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                minutes = <span class="string">"0"</span> + minutes;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (seconds &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="number">1</span>);</span></span><br><span class="line"><span class="javascript">                seconds = <span class="string">"0"</span> + seconds;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(seconds);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            month = today.getMonth() + 1;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> time = today.getFullYear()</span></span><br><span class="line"><span class="javascript">                + <span class="string">"-"</span>+ month</span></span><br><span class="line"><span class="javascript">                + <span class="string">"-"</span> + today.getDate() + <span class="string">" "</span></span></span><br><span class="line"><span class="javascript">                + d[today.getDay()+<span class="number">1</span>] + <span class="string">" "</span></span></span><br><span class="line"><span class="javascript">                + hours + <span class="string">" : "</span></span></span><br><span class="line"><span class="javascript">                + minutes + <span class="string">" : "</span></span></span><br><span class="line"><span class="undefined">                + seconds;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'clock'</span>).innerHTML = time;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(time);</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(new Date());</span></span></span><br><span class="line"><span class="javascript">            today = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">            time = <span class="literal">null</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        setClock();</span></span><br><span class="line"><span class="undefined">        setInterval(setClock, 1000);</span></span><br><span class="line"><span class="undefined">    &#125;)();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/js模拟键盘开发笔记/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/js模拟键盘开发笔记/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.904Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="js模拟键盘开发笔记"><a href="#js模拟键盘开发笔记" class="headerlink" title="js模拟键盘开发笔记"></a>js模拟键盘开发笔记</h1><h2 id="一-实现方式"><a href="#一-实现方式" class="headerlink" title="(一). 实现方式"></a>(一). 实现方式</h2><h3 id="一-页面显示"><a href="#一-页面显示" class="headerlink" title="一. 页面显示"></a>一. 页面显示</h3><h4 id="整体-一个-ul-列表-每个-li-是键盘上一个键"><a href="#整体-一个-ul-列表-每个-li-是键盘上一个键" class="headerlink" title="整体: 一个 ul 列表. 每个 li 是键盘上一个键"></a>整体: 一个 <code>ul</code> 列表. 每个 <code>li</code> 是键盘上一个键</h4><h4 id="键盘分类-三种"><a href="#键盘分类-三种" class="headerlink" title="键盘分类-三种:"></a>键盘分类-三种:</h4><ol>
-<li>可以 <code>shift</code> 的(如 <code>1</code> 和 <code>!</code> 等数字符号键)</li>
-<li>字母键</li>
-<li>功能键(回车, 空格, 退格, <code>capslock</code> 等)</li>
+<h2 id="HC6800-ES-V2-0开发板所能实现的功能"><a href="#HC6800-ES-V2-0开发板所能实现的功能" class="headerlink" title="HC6800-ES V2.0开发板所能实现的功能"></a>HC6800-ES V2.0开发板所能实现的功能</h2><ol>
+<li>流水灯（LED模块）</li>
+<li>蜂鸣器报警</li>
+<li>数码管显示</li>
+<li>独立按键控制</li>
+<li>温度检测</li>
+<li>红外遥控</li>
+<li>实时时钟</li>
+<li>LCD显示（LCD1602\LCD12864）</li>
+<li>超声波检测</li>
+<li>2.4G无线通信</li>
+<li>AD/DA转换控制</li>
+<li>8*8LED点阵显示</li>
+<li>矩阵按键控制</li>
+<li>EEPROM实验（保存的数据掉电不丢失）</li>
+<li>智能温度控制系统（温度检测+蜂鸣器+独立按键+LED+数码管显示+步进电机）:实现温度的检测智能控制  </li>
+<li>多功能电子时钟（温度检测+蜂鸣器+独立按键+LED+LCD1602+DS1302时钟+24C02）：实现日历、闹钟、温度等功能控制，将闹铃数据存储在24CO2芯片中  </li>
+<li>多功能游戏机（蜂鸣器+独立按键+LED+LCD12864+DS1302时钟+温度检测）：实现贪吃蛇、俄罗斯方块、时钟、温度控制等  </li>
+<li>无线控制应用（温度检测+蜂鸣器+红外遥控+LCD1602+DS1302时钟）：使用红外遥控器调节时钟及温度阀值等控制  </li>
+<li>智能计算器（温度检测+蜂鸣器+独立按键+LED+LCD1602+DS1302时钟+24C02+矩阵按键）：实现类似计算器的功能，具有加减乘除等基本功能和时钟温度显示功能  </li>
+<li>8<em>8点阵版游戏机（8</em>8点阵+独立按键+蜂鸣+数码管）：在8*8LED点阵上实现贪吃蛇游戏，数码管显示累积分数  </li>
+<li>烟雾（甲烷、CO2等气体）检测报警器（AD模块+独立按键+蜂鸣+LCD1602+直流电机）：利用外部烟雾传感器采集的模拟信号，通过AD转换进行控制  </li>
 </ol>
-<h4 id="键盘布局方式"><a href="#键盘布局方式" class="headerlink" title="键盘布局方式"></a>键盘布局方式</h4><p>可以使用浮动或 <code>flex</code>, 设定总体宽度, 然后单独设定特殊长度的键宽度, 元素自动换行.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"keyboard"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"delete lastitem"</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"tab"</span>&gt;</span>tab<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"letter"</span>&gt;</span>q<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"capslock"</span>&gt;</span>caps lock<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"return lastitem"</span>&gt;</span>return<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"left-shift"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"right-shift lastitem"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"space lastitem"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="二-js-功能"><a href="#二-js-功能" class="headerlink" title="二. js 功能"></a>二. js 功能</h3><p>js 功能分为: </p>
-<ul>
-<li>设置事件监听(键盘点击, 文本框焦点)</li>
-<li>特殊功能键的实现: <code>CapsLock</code> , <code>Shift</code> - 恢复 <code>Shift</code> , <code>delete</code> (退格), <code>Space</code> (空格)</li>
-<li>字母-大写字母, 数字-特殊符号向表单文本框回写<h4 id="1-Caps-Lock-功能实现"><a href="#1-Caps-Lock-功能实现" class="headerlink" title="1. Caps Lock 功能实现"></a>1. <code>Caps Lock</code> 功能实现</h4>css 字母键增加一个大写类<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.uppercase</span> &#123;<span class="attribute">text-transform</span>: uppercase;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><ol>
+<li>C语言的学习及使用  </li>
+<li>IO口的基本使用  </li>
+<li>定时器的配置及使用  </li>
+<li>中断的配置及使用  </li>
+<li>串口通信的配置及使用  </li>
+<li>外围模块的学习及使用  </li>
+<li>常用通信时序的模拟学习及使用<br>这里只列举了部分知识要点，更多的知识要点需后面学习体会。  </li>
+</ol>
+<h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><ul>
+<li>开发板介绍及使用</li>
+<li>51单片机介绍</li>
+<li>C语言基础</li>
+<li>单片机最小系统</li>
+<li>开发软件安装与工程建立</li>
+<li>点亮第一个LED</li>
+<li>LED闪烁</li>
+<li>LED流水灯</li>
+<li>蜂鸣器</li>
+</ul>
+<h2 id="实验程序目录"><a href="#实验程序目录" class="headerlink" title="实验程序目录"></a>实验程序目录</h2><ul>
+<li>基础实验例程<ul>
+<li>点亮第一个LED</li>
+<li>LED闪烁</li>
+<li>LED流水灯</li>
+<li>蜂鸣器</li>
+<li>静态数码管显示</li>
+<li>动态数码管显示</li>
+<li>独立按键</li>
+<li>矩阵按键</li>
+<li>8X8LED点阵(点亮一个点)</li>
+<li>8X8LED点阵(显示数字)</li>
+<li>外部中断0</li>
+<li>外部中断1</li>
+<li>定时器0中断</li>
+<li>定时器1中断</li>
+<li>串口通信</li>
+<li>EEPROM-IIC</li>
+<li>DS18B20温度传感器</li>
+<li>DS1302时钟</li>
+<li>红外通信</li>
+<li>AD模数转换</li>
+<li>DA数模转换</li>
+<li>LCD1602液晶</li>
+</ul>
 </li>
+<li>中级实验例程</li>
+<li>高级实验例程</li>
 </ul>
-<p>js 切换<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.letter'</span>).toggleClass(<span class="string">'uppercase'</span>);</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-shift-键功能实现"><a href="#2-shift-键功能实现" class="headerlink" title="2. shift 键功能实现"></a>2. <code>shift</code> 键功能实现</h4><ul>
-<li>实现大写功能-键盘显示大写字母(见上一条)</li>
-<li>实现上档功能-键盘显示数字键代表的符号等  </li>
-</ul>
-<p>html代码:<br><figure class="highlight xhtml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>css 代码:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.on</span> &#123;<span class="attribute">display</span>: none;&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.symbol span'</span>).toggle();</span><br></pre></td></tr></table></figure>
-<p>补充说明:<br><code>toggle()</code> 是 <code>jQuery</code>函数, 切换显示和隐藏.</p>
-<h4 id="3-delete-退格-实现"><a href="#3-delete-退格-实现" class="headerlink" title="3. delete (退格) 实现"></a>3. <code>delete</code> (退格) 实现</h4><ul>
-<li>获取文本框内容</li>
-<li>substr截取: <code>html.substr(0, html.length - 1)</code></li>
-<li>回写文本框</li>
-</ul>
-<h4 id="4-特殊字符"><a href="#4-特殊字符" class="headerlink" title="4. 特殊字符"></a>4. 特殊字符</h4><p>标点, 空格, 回车, 制表符<br>标点: <code>character = $(&#39;span:visible&#39;, $this).html();</code><br>回车/制表/空格: <code>character = &quot;\n&quot;;</code>   </p>
-<h2 id="二-笔记"><a href="#二-笔记" class="headerlink" title="(二). 笔记"></a>(二). 笔记</h2><h3 id="1-焦点事件"><a href="#1-焦点事件" class="headerlink" title="1. 焦点事件"></a>1. 焦点事件</h3><p>两个文本框, 想判断当前焦点是哪个  </p>
-<ul>
-<li>事件对象: <code>document.activeElement</code>  </li>
-<li>监听文本框失去焦点和获取焦点事件, 判断  </li>
-</ul>
-<p>代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line"><span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">    input_element_id = current_focus_id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>遇到问题: 发现无法获取当前焦点, 猜测:<br>A失去焦点, B获得焦点. 两个动作是同时发生的, 但监听A失去焦点时, B并未获得焦点<br>解决办法:<br>添加定时器, 延期0秒执行(则B获得焦点, 代码如下: )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">    <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">        input_element_id = current_focus_id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 2. 用`</span>jquery<span class="string">`的`</span>delegate<span class="string">`添加事件</span></span><br><span class="line"><span class="string">&gt; 指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。   </span></span><br><span class="line"><span class="string">&gt; 使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">代码:   </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">$(<span class="string">'.login'</span>).delegate(<span class="string">"*"</span>, <span class="string">"focus blur"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">     setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">        <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">            input_element_id = current_focus_id;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>猜测实现:    </p>
-<ul>
-<li>遍历指定元素的所有符合选择器的元素, </li>
-<li>为他们添加事件监听</li>
-<li>绑定事件触发时执行的函数</li>
-</ul>
-<h3 id="3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写"><a href="#3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写" class="headerlink" title="3. css 样式设置为: text-transform: uppercase 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写"></a>3. css 样式设置为: <code>text-transform: uppercase</code> 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写</h3>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/04/15/js禁止鼠标右键/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/04/15/js禁止鼠标右键/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.883Z">
-          2018-04-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>#js禁止鼠标右键</p>
-<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    $(<span class="built_in">document</span>).bind(<span class="string">"contextmenu"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;   </span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;   </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">"JavaScript"</span>&gt;</span><br><span class="line">     <span class="built_in">document</span>.oncontextmenu=<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"event.returnValue=false;"</span>);</span><br><span class="line">     <span class="built_in">document</span>.onselectstart=<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"event.returnValue=false;"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>##禁止右键弹出的突破方法<br>地址栏中输入：<code>javascript:alert($(document).unbind(&quot;contextmenu&quot;,&quot;&quot;));</code></p>
+<h2 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h2><p>51 -&gt; STM32 -&gt; ARM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">51 --&gt; STM32</span><br><span class="line">STM32 --&gt; ARM</span><br></pre></td></tr></table></figure>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法:"></a>想法:</h2><p>单片式是否能够实现婚宴礼金录入, 数据统计<br>酒精测试仪</p>
+<h2 id="安装单片机"><a href="#安装单片机" class="headerlink" title="安装单片机"></a>安装单片机</h2><p>安装单片机</p>
+<ol>
+<li>连接usb线</li>
+<li>USB驱动下载(可能不需要)</li>
+<li>系统驱动(烧录软件)</li>
+</ol>
+<p>安装失败: 安装相应驱动/ 驱动精灵/换一条线</p>
+<p>先学集成好的烧写软件, 之后再学习标准配置方法.</p>
+<p><img src="https://i.imgur.com/o0TBXi8.jpg" alt="单片机截图"><br><img src="https://i.imgur.com/UIV3QY5.png" alt="烧录软件截图"></p>
 
       
     </div>
@@ -547,15 +654,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/java培训笔记/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/不显示但能获取焦点的文本框/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/java培训笔记/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.867Z">
-          2018-04-15
+      <a href="/2018/05/02/不显示但能获取焦点的文本框/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.634Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -567,78 +674,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="JAVA基础"><a href="#JAVA基础" class="headerlink" title="JAVA基础"></a>JAVA基础</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="数据类型-java内存-堆栈"><a href="#数据类型-java内存-堆栈" class="headerlink" title="数据类型(java内存 堆栈)"></a>数据类型(java内存 堆栈)</h3><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><blockquote>
-<p>引用数据类型</p>
-</blockquote>
-<p>`</p>
-<blockquote>
-<p>java内存 堆栈</p>
-</blockquote>
-<p><code>int</code>与<code>double</code> 用的比较多</p>
-<blockquote>
-<p><code>id</code> 一般用 <code>long</code></p>
-</blockquote>
-<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><h3 id="Java关键字"><a href="#Java关键字" class="headerlink" title="Java关键字"></a>Java关键字</h3><table><br><br>    <tr><br>        <td>class</td><br>        <td>类名和文件名时一致的</td><br>    </tr><br><br>    <tr><br>        <td>native</td><br>        <td>本地, 原生方法(非java语言)</td><br>    </tr><br>    <tr><br>        <td>static</td><br>        <td><br>            1. 不用new对象<br>            2. 内存<br>        </td><br>    </tr><br>    <tr><br>        <td>synchronized</td><br>        <td>线程, 一个对象调用该对象时, 其他的对象不能再调用</td><br>        <td>缺点: 不能并发, 效率低, 并发效果低</td><br>    </tr><br>    <tr><br>        <td>transient</td><br>        <td>线程高并发相关</td><br>    </tr><br><br></table>
-
-<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><h4 id="私有构造方法"><a href="#私有构造方法" class="headerlink" title="私有构造方法"></a>私有构造方法</h4><p>单例模式: 一般IO流</p>
-<h4 id="公有构造方法"><a href="#公有构造方法" class="headerlink" title="公有构造方法"></a>公有构造方法</h4><ul>
-<li>无参构造方法</li>
-<li>有参构造方法</li>
-</ul>
-<p>`</p>
-<h5 id="方法的重载和重写"><a href="#方法的重载和重写" class="headerlink" title="方法的重载和重写"></a>方法的重载和重写</h5><blockquote>
-<p>重载: 方法名一样, 参数不同(参数的个数, 参数的类型)</p>
-</blockquote>
-<blockquote>
-<p>重写: 重写父类的方法, 方法名, 参数一样.</p>
-</blockquote>
-<p>`</p>
-<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><p><code>int</code>与<code>Integer</code></p>
-<ul>
-<li>int有默认值, 包装类没有默认值</li>
-<li>包装类有方法有属性</li>
-<li>比较大小<pre><code>&lt;pre&gt;`i.equals(args0)`&lt;/pre&gt;
-</code></pre></li>
-<li>转换  <pre>Integer.valueOf(s)</pre>
-
-
-</li>
-</ul>
-<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><ul>
-<li>List (序列)</li>
-<li>Map (键值对)</li>
-<li>Set (不知道Map里的键名情况下-遍历map)</li>
-</ul>
-<blockquote>
-<p>HashMap 非线程安全, 性能较高</p>
-</blockquote>
-<blockquote>
-<p>HashTable 线程安全, 性能效率低</p>
-</blockquote>
-<pre><code>Map&lt;String, String&gt; map = new HashMap&lt;String&gt;&lt;String&gt;();
-map.put(&quot;username&quot;, &quot;szg&quot;);
-</code></pre><blockquote>
-<p>如果不使用泛型: 在<code>map.put(&quot;username&quot;, &quot;szg&quot;);</code>部分进行强制类型转换也行, 但不推荐</p>
-</blockquote>
-<pre><code>Set s = map.keySet();
-</code></pre><p>循环set</p>
-<pre><code>for(String str : s) {
-
-}
-</code></pre><p>遍历list </p>
-<pre>
-for(int i = 0; i < list.size(); i++) {}
-</pre>
-
-
-<pre><code>List&lt;String&gt; list
-    for (String[] s : list) {
-
-} 
-</code></pre><blockquote>
-<p>第二种方法效率相对高</p>
-</blockquote>
-
+        <h1 id="不显示但能获取焦点的文本框"><a href="#不显示但能获取焦点的文本框" class="headerlink" title="不显示但能获取焦点的文本框"></a>不显示但能获取焦点的文本框</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">size</span>=<span class="string">"0"</span> <span class="attr">style</span>=<span class="string">"width: 0; height: 0; border: none; overflow: hidden;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="锁定焦点"><a href="#锁定焦点" class="headerlink" title="锁定焦点"></a>锁定焦点</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test1 = <span class="built_in">document</span>.getElementById(<span class="string">'test1'</span>);</span><br><span class="line">test1.onfocus = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(test1)</span><br><span class="line">test1.focus();</span><br><span class="line">test1.onblur = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">this</span>.focus();</span><br><span class="line">    <span class="built_in">console</span>.log(test1.value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -663,15 +700,15 @@ for(int i = 0; i < list.size(); i++) {}
 
   
     
-    <h3 class="article-title"><a href="/2018/04/15/java判断两个long类型相等/"><span></span></a></h3>
+    <h3 class="article-title"><a href="/2018/05/02/编辑器的快捷键/"><span></span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/04/15/java判断两个long类型相等/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-04-15T12:53:20.847Z">
-          2018-04-15
+      <a href="/2018/05/02/编辑器的快捷键/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.630Z">
+          2018-05-02
         </time>
       </a>
     </span>
@@ -683,10 +720,7 @@ for(int i = 0; i < list.size(); i++) {}
   <div class="article-content">
     <div class="entry">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> baseTest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseDataStructer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Long l1 = <span class="number">10000026500083l</span>;</span><br><span class="line">		Long l2 = <span class="number">10000026500083l</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>  (l1 == l2 ) &#123;</span><br><span class="line">			System.out.println(<span class="string">"== "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (l1.equals(l2)) &#123;</span><br><span class="line">			System.out.println(<span class="string">"equals"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (l1.longValue() == l2.longValue()) &#123;</span><br><span class="line">			System.out.println(<span class="string">"longValue"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>输出结果是:<br>equals<br>longValue</p>
-</blockquote>
+        <h1 id="编辑器的快捷键"><a href="#编辑器的快捷键" class="headerlink" title="编辑器的快捷键"></a>编辑器的快捷键</h1><h2 id="notepad"><a href="#notepad" class="headerlink" title="notepad++"></a>notepad++</h2><p>分割行: CTRL + I<br>合并行: CTRL + J<br>上移当前行: CTRL + SHIFT + ↑<br>下移当前行: CTRL + SHIFT + 下<br>在当前行上方插入空行: CTRL + ALT + ENTER<br>在当前行下方插入空行: CTRL + ALT + SHIFT + ENTER</p>
 
       
     </div>

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="maven 笔记一. 使用层面清单
+下载配置
+创建maven项目
+eclipse maven
+pom.xml添加包和手动添加依赖(src\lib)
+创建与导入
+IDEA maven
+
+二. 理解层面(1). 工程目录
+
+
+配置项
+默认值
+
+
+
+
+source code
+/src/main/java
+">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/mave笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.609Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="maven-笔记"><a href="#maven-笔记" class="headerlink" title="maven 笔记"></a>maven 笔记</h1><h2 id="一-使用层面清单"><a href="#一-使用层面清单" class="headerlink" title="一. 使用层面清单"></a>一. 使用层面清单</h2><ol>
+<li>下载配置</li>
+<li>创建maven项目</li>
+<li>eclipse maven</li>
+<li>pom.xml添加包和手动添加依赖(src\lib)</li>
+<li>创建与导入</li>
+<li>IDEA maven</li>
+</ol>
+<h2 id="二-理解层面"><a href="#二-理解层面" class="headerlink" title="二. 理解层面"></a>二. 理解层面</h2><h3 id="1-工程目录"><a href="#1-工程目录" class="headerlink" title="(1). 工程目录"></a>(1). 工程目录</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source code</td>
+<td>/src/main/java</td>
+</tr>
+<tr>
+<td>resources</td>
+<td>/src/main/resources</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>/src/test</td>
+</tr>
+<tr>
+<td>Complied byte code</td>
+<td>/target</td>
+</tr>
+<tr>
+<td>distributable JAR</td>
+<td>/targer/classes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。"><a href="#groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。" class="headerlink" title="groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。"></a>groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。</h3><h3 id="2-生命周期"><a href="#2-生命周期" class="headerlink" title="(2). 生命周期"></a>(2). 生命周期</h3><p>clean, default, site – 相互独立的</p>
+<h4 id="clean-移除所有上一次构建生成的文件"><a href="#clean-移除所有上一次构建生成的文件" class="headerlink" title="clean 移除所有上一次构建生成的文件"></a>clean 移除所有上一次构建生成的文件</h4><ol>
+<li>pre 生命周期</li>
+<li>生命周期</li>
+<li>post 生命周期  </li>
+</ol>
+<p>运行post 生命周期名 会执行1, 2, 3步</p>
+<h4 id="site-生成项目站点文档并部署到特定的服务器上"><a href="#site-生成项目站点文档并部署到特定的服务器上" class="headerlink" title="site 生成项目站点文档并部署到特定的服务器上"></a>site 生成项目站点文档并部署到特定的服务器上</h4><h3 id="3-仓库"><a href="#3-仓库" class="headerlink" title="(3). 仓库"></a>(3). 仓库</h3><ol>
+<li>本地仓库</li>
+<li>中央仓库 (maven社区管理的常用库)</li>
+<li>远程仓库<br>顺序 : 本地 -&gt; 中央 -&gt; 远程</li>
+</ol>
+<h3 id="4-插件"><a href="#4-插件" class="headerlink" title="(4). 插件"></a>(4). 插件</h3><p>Maven 实际上是一个依赖插件执行的框架, 插件主要用途</p>
+<ul>
+<li>创建 jar 文件</li>
+<li>创建 war 文件</li>
+<li>编译代码文件</li>
+<li>代码单元测试</li>
+<li>创建工程文档</li>
+<li>创建工程报告<br>在pom.xml用法<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-antrun-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">id</span>&gt;</span>id.clean<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">phase</span>&gt;</span>clean<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>run<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">tasks</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">echo</span>&gt;</span>clean phase<span class="tag">&lt;/<span class="name">echo</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">tasks</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">execution</span>&gt;</span>     </span><br><span class="line">                <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-创建工程"><a href="#5-创建工程" class="headerlink" title="(5). 创建工程"></a>(5). 创建工程</h3><p>Maven 使用原型（archetype）插件创建工程。要创建一个简单的 Java 应用，我们将使用 maven-archetype-quickstart 插件。  </p>
+<h3 id="6-pom-xml解释"><a href="#6-pom-xml解释" class="headerlink" title="(6). pom.xml解释"></a>(6). pom.xml解释</h3><h4 id=""><a href="#" class="headerlink" title=""></a><dependency></dependency></h4><ul>
+<li>外部依赖（library jar location）能够像其他依赖一样在 pom.xml 中配置。<br>指定 groupId 为 library 的名称。 <code>&lt;groupId&gt;junit&lt;/groupId&gt;</code><br>指定 artifactId 为 library 的名称。   <code>&lt;artifactId&gt;junit&lt;/artifactId&gt;</code><br>指定作用域（scope）为系统。 <code>&lt;scope&gt;system&lt;/scope&gt;</code>, <code>&lt;scope&gt;test&lt;/scope&gt;</code><br>指定相对于工程位置的系统路径。 <code>&lt;systemPath&gt;${basedir}\src\lib\ldapjdk.jar&lt;/systemPath&gt;</code></li>
+</ul>
+<h4 id="工程文档-mvn-site"><a href="#工程文档-mvn-site" class="headerlink" title="工程文档 mvn site"></a>工程文档 <code>mvn site</code></h4><h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

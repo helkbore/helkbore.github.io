@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="正则表达式
+正整数 (觉得有问题)/^[0-9]*[1-9][0-9]*$/
+负整数/^-[0-9]*[1-9][0-9]*$/;
+正浮点数/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/正则表达式收集/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.776Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><ol>
+<li>正整数 (觉得有问题)<br><code>/^[0-9]*[1-9][0-9]*$/</code></li>
+<li>负整数<br><code>/^-[0-9]*[1-9][0-9]*$/;</code></li>
+<li>正浮点数<br><code>/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;</code></li>
+<li>负浮点数<br><code>/^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;</code>  </li>
+<li>浮点数<br><code>/^(-?\d+)(\.\d+)?$/;</code></li>
+<li>email地址<br><code>\w+-?\w+@\w+.(com|cn)</code></li>
+<li>url地址<br><code>/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/;</code><br>或：<code>^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\&#39;:+!]*([^&lt;&gt;\&quot;\&quot;])*$</code></li>
+<li>年/月/日（年-月-日、年.月.日）<br><code>/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;</code></li>
+<li>匹配中文字符<br><code>/[\u4e00-\u9fa5]/;</code></li>
+<li>匹配帐号是否合法(字母开头，允许5-10字节，允许字母数字下划线)<br><code>/^[a-zA-Z][a-zA-Z0-9_]{4,9}$/;</code></li>
+<li>匹配空白行的正则表达式<br><code>/\n\s*\r/;</code></li>
+<li>匹配中国邮政编码<br><code>/[1-9]\d{5}(?!\d)/;</code></li>
+<li>匹配身份证<br><code>/\d{15}|\d{18}/;</code></li>
+<li>匹配国内电话号码<br><code>/(\d{3}-|\d{4}-)?(\d{8}|\d{7})?/;</code></li>
+<li>匹配IP地址<br><code>/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;</code></li>
+<li>匹配首尾空白字符的正则表达式<br><code>/^\s*|\s*$/;</code></li>
+<li>匹配HTML标记的正则表达式<br><code>&lt; (\S*?)[^&gt;]*&gt;.*?|&lt; .*? /&gt;;</code></li>
+<li>sql 语句<br><code>^(select|drop|delete|create|update|insert).*$</code></li>
+<li>提取信息中的网络链接<br><code>(h|H)(r|R)(e|E)(f|F) *= *(&#39;|&quot;)?(\w|\\|\/|\.)+(&#39;|&quot;| *|&gt;)?</code> </li>
+<li>提取信息中的邮件地址<br><code>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</code></li>
+<li>提取信息中的图片链接<br><code>(s|S)(r|R)(c|C) *= *(&#39;|&quot;)?(\w|\\|\/|\.)+(&#39;|&quot;| *|&gt;)?</code> </li>
+<li>提取信息中的 IP 地址<br><code>(\d+)\.(\d+)\.(\d+)\.(\d+)</code></li>
+<li>取信息中的中国手机号码<br><code>(86)*0*13\d{9}</code></li>
+<li>提取信息中的中国邮政编码<br><code>[1-9]{1}(\d+){5}</code> </li>
+<li>提取信息中的浮点数（即小数）<br><code>(-?\d*)\.?\d+</code></li>
+<li>提取信息中的任何数字<br><code>(-?\d*)(\.\d+)?</code></li>
+<li>电话区号<br><code>^0\d{2,3}$</code></li>
+<li>腾讯 QQ 号<br><code>^[1-9]*[1-9][0-9]*$</code></li>
+<li>帐号（字母开头，允许 5-16 字节，允许字母数字下划线）<br><code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></li>
+<li>中文、英文、数字及下划线<br><code>^[\u4e00-\u9fa5_a-zA-Z0-9]+$</code></li>
+<li>纯数字<br><code>^[0-9]+$</code> 或 <code>^\d+$</code></li>
+<li>纯字母<br><code>^[a-zA-Z]+$</code></li>
+<li>只能是字母开头，并且字母和数字的组合，长度范围是6-10<br><code>^[a-zA-Z]{1}\w{5,9}$</code></li>
+<li>\w<br><code>[a-zA-Z]|\w</code></li>
+<li>6位数字<br><code>^\d{6}$</code></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

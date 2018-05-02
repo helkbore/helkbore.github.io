@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="svg 学习&amp;lt;svg&amp;gt; 开始标签width, height svg图片的宽高
+circle 圆cy, cx 圆心的坐标, 默认(0, 0)r 半径
+
+stroke: 外边框颜色  
+stroke-width: 外边框宽度  
+fill: 圆填充的颜色  
+
+rect 矩形
+x: 距左边的">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/svg学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.627Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="svg-学习"><a href="#svg-学习" class="headerlink" title="svg 学习"></a>svg 学习</h1><h2 id="lt-svg-gt-开始标签"><a href="#lt-svg-gt-开始标签" class="headerlink" title="&lt;svg&gt; 开始标签"></a><code>&lt;svg&gt;</code> 开始标签</h2><p><code>width</code>, <code>height</code> svg图片的宽高</p>
+<h2 id="circle-圆"><a href="#circle-圆" class="headerlink" title="circle 圆"></a>circle 圆</h2><p>cy, cx 圆心的坐标, 默认(0, 0)<br>r 半径</p>
+<ul>
+<li>stroke: 外边框颜色  </li>
+<li>stroke-width: 外边框宽度  </li>
+<li>fill: 圆填充的颜色  </li>
+</ul>
+<h2 id="rect-矩形"><a href="#rect-矩形" class="headerlink" title="rect 矩形"></a>rect 矩形</h2><ul>
+<li>x: 距左边的距离</li>
+<li>y: 距顶部的距离</li>
+<li>rx, ry: 矩形圆角<h3 id="style-css样式"><a href="#style-css样式" class="headerlink" title="style: css样式"></a>style: css样式</h3></li>
+</ul>
+<ul>
+<li>fill 填充  </li>
+<li>stroke-width: 边框宽度  </li>
+<li>stroke: 边框颜色  </li>
+<li>fill-opacity: 填充色的透明度</li>
+<li>边框的透明度</li>
+<li>opacity: 整个元素的透明度<h2 id="ellipse-椭圆"><a href="#ellipse-椭圆" class="headerlink" title="ellipse 椭圆"></a>ellipse 椭圆</h2></li>
+<li>cx, cy: 圆点坐标</li>
+<li>rx, ry 水平半径, 垂直半径<h2 id="line-线"><a href="#line-线" class="headerlink" title="line 线"></a>line 线</h2><h2 id="polyline-折线"><a href="#polyline-折线" class="headerlink" title="polyline 折线"></a>polyline 折线</h2><h2 id="polygon-多边形"><a href="#polygon-多边形" class="headerlink" title="polygon 多边形"></a>polygon 多边形</h2><h2 id="path-路径"><a href="#path-路径" class="headerlink" title="path 路径"></a>path 路径</h2></li>
+</ul>
+<h2 id="viewBox-与-viewPort"><a href="#viewBox-与-viewPort" class="headerlink" title="viewBox 与 viewPort"></a>viewBox 与 viewPort</h2><p>viewPort指的就是<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">""</span> <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>将viewBox里的区域全屏居中显示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">viewBox</span>=<span class="string">"0,0,40,30"</span> <span class="attr">style</span>=<span class="string">"border:1px solid #cd0000;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"20"</span> <span class="attr">height</span>=<span class="string">"15"</span> <span class="attr">fill</span>=<span class="string">"#cd0000"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="preserveAspectRation"><a href="#preserveAspectRation" class="headerlink" title="preserveAspectRation"></a>preserveAspectRation</h2><p>适用情况: viewPort 与 viewBox 不比例不那么匹配的时候<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">preserveAspectRation="xMinYMid slice"</span><br></pre></td></tr></table></figure></p>
+<p>第1个值表示，viewBox如何与SVG viewport对齐；第2个值表示，如何维持高宽比（如果有）<br>第1个值又是由两部分组成的。前半部分表示x方向对齐，后半部分表示y方向对齐<br>值        含义<br>xMin    viewport和viewBox左边对齐<br>xMid    viewport和viewBox x轴中心对齐<br>xMax    viewport和viewBox右边对齐<br>YMin    viewport和viewBox上边缘对齐。注意Y是大写。<br>YMid    viewport和viewBox y轴中心点对齐。注意Y是大写。<br>YMax    viewport和viewBox下边缘对齐。注意Y是大写。   </p>
+<p>第2个值<br>值    含义<br>meet    保持纵横比缩放viewBox适应viewport，受<br>slice    保持纵横比同时比例小的方向放大填满viewport，攻<br>none    扭曲纵横比以充分适应viewport，变态</p>
+<h2 id="transform-”matrix-1-0-0-1-51-125-36-0977-”"><a href="#transform-”matrix-1-0-0-1-51-125-36-0977-”" class="headerlink" title="transform=”matrix(1,0,0,1,51.125,36.0977)”"></a>transform=”matrix(1,0,0,1,51.125,36.0977)”</h2><p>矩阵<br>[a, c, e]<br>[b, d, f]<br>[0, 0, 1]<br>得出 x = ax + cy + e, y = bx + dy + f<br>所以matrix(1, 0, 0, 1, 51.125, 36.0977) 代入得<br>x = x + 51.125<br>y = y + 36.0977<br>效果就是: 向右移动了51.125, 向下移动了36.0977</p>
+<h2 id="文本换行写法"><a href="#文本换行写法" class="headerlink" title="文本换行写法"></a>文本换行写法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"35"</span> <span class="attr">y</span>=<span class="string">"50"</span> <span class="attr">style</span>=<span class="string">"fill: #000;"</span>&gt;</span>使用说明书</span><br><span class="line">    <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">x</span>=<span class="string">"50"</span> <span class="attr">y</span>=<span class="string">"70"</span>&gt;</span>合格证<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="maker"><a href="#maker" class="headerlink" title="maker"></a>maker</h2><h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
+<li>SVG DOM 在 Document Object Model HTML 之后构建</li>
+</ol>
+<p>##其他笔记<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br><span class="line">(<span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

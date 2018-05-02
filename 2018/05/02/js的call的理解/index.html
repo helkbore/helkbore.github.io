@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="js的call()的理解之前也总是碰到, 然后每次都百度一下, 结果每次都是看似懂了然后之后又忘了. 觉得是一个难以越过的高山一样?
+这次看了基础的教程.
+个人理解就是对象A的方法, 用的参数是A的属性, 现在想用这个方法, 但是用的参数是别的对象的.12345678910111213141516v">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js的call的理解/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.557Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js的call-的理解"><a href="#js的call-的理解" class="headerlink" title="js的call()的理解"></a>js的call()的理解</h1><p>之前也总是碰到, 然后每次都百度一下, 结果每次都是看似懂了然后之后又忘了. 觉得是一个难以越过的高山一样?</p>
+<p>这次看了基础的教程.</p>
+<p>个人理解就是对象A的方法, 用的参数是A的属性, 现在想用这个方法, 但是用的参数是别的对象的.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">        firstName : <span class="string">"John"</span>,</span><br><span class="line">        lastName : <span class="string">"Doe"</span>,</span><br><span class="line">        fullName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">"  "</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> myObject = &#123;</span><br><span class="line">        firstName : <span class="string">"Mary"</span>,</span><br><span class="line">        lastName: <span class="string">"Doe"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(person.fullName.call(myObject));</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(person.fullName());</span><br></pre></td></tr></table></figure></p>
+<h2 id="call-的一些用例"><a href="#call-的一些用例" class="headerlink" title="call 的一些用例"></a>call 的一些用例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"ABC"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.toLowerCase());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.prototype.toLowerCase.call(<span class="string">"EFgG"</span>));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="一. 搭建中的坑
+
+建项目名要建成和用户名/邮箱同名的. 比如我的是 helkbore, 建程度就是 helkbore.github.io 不能起别的名了
+我安的时候next主题正在维护, 不知道出了什么问题不能自动生成index.html
+域名绑定的时候一定要用 https (可能可以用 http">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/读hexo/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.424Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>一. 搭建中的坑</p>
+<ol>
+<li>建项目名要建成和用户名/邮箱同名的. 比如我的是 <code>helkbore</code>, 建程度就是 <code>helkbore.github.io</code> 不能起别的名了</li>
+<li>我安的时候next主题正在维护, 不知道出了什么问题不能自动生成index.html</li>
+<li>域名绑定的时候一定要用 <code>https</code> (可能可以用 <code>http</code> 但我不知道, 而且网上有文章说只允许 <code>http</code> )</li>
+</ol>
+<p>二. 找到入口: hexo -v </p>
+<ol>
+<li>在npm下找到 hexo.cmd<br>我的电脑里的位置是: C:\Users\username\AppData\Roaming\npm<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">IF</span> <span class="keyword">EXIST</span> "%~dp0\node.exe" (</span><br><span class="line">  "%~dp0\node.exe"  "%~dp0\node_modules\hexo\bin\hexo" %*</span><br><span class="line">) <span class="keyword">ELSE</span> (</span><br><span class="line">  @<span class="built_in">SETLOCAL</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">%PATHEXT:;.JS;=;%</span></span><br><span class="line">  @<span class="built_in">SET</span> PATHEXT=<span class="variable">%PATHEXT:;.JS;=;%</span></span><br><span class="line">  node  "%~dp0\node_modules\hexo\bin\hexo" %*</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>关于%<br>变量引用<br>上面引用了PATHEXT<br>输出PATHEXT为</p>
+<blockquote>
+<p>.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC    </p>
+</blockquote>
+<p>参考了 <a href="http://www.jb51.net/article/32866.htm" target="_blank" rel="noopener">http://www.jb51.net/article/32866.htm</a></p>
+</li>
+<li>关于%dp0<br>%0代表批处理本身<br>~dp是变量扩充<br>d既是扩充到分区号<br>p就是扩充到路径<br>所以%dp0是该bat/cmd的完整路径(绝对路径)</li>
+<li>关于PATHEXT<br>确切概念没查到, 好像是一个系统变量, 用来定义默认的扩展名的.</li>
+</ul>
+<ol start="2">
+<li>“%~dp0\node_modules\hexo\bin\hexo” :<br><code>require(&#39;hexo-cli&#39;)();</code></li>
+</ol>
+<p>路径如下:<br>npm\node_modules\hexo\node_modules\hexo-cli\package.json 中的 “main”: “lib/hexo”<br>找到<br>npm\node_modules\hexo\node_modules\hexo-cli\lib\hexo.js</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

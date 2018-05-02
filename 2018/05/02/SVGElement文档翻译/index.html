@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="SVGElement文档翻译来自: https://developer.mozilla.org/en-US/docs/Web/API/SVGElement
+
+All of the SVG DOM interfaces that correspond directly to elements in t">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/SVGElement文档翻译/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.610Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="SVGElement文档翻译"><a href="#SVGElement文档翻译" class="headerlink" title="SVGElement文档翻译"></a>SVGElement文档翻译</h1><p>来自: <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGElement" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/SVGElement</a></p>
+<blockquote>
+<p>All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the SVGElement interface.<br>所有SVG元素的SVG DOM 接口都来自 SVGElement 接口</p>
+</blockquote>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="SVGElement-dataset-只读"><a href="#SVGElement-dataset-只读" class="headerlink" title="SVGElement.dataset (只读)"></a>SVGElement.dataset (只读)</h3><blockquote>
+<p>A DOMStringMap object which provides a list of key/value pairs of named data attributes which correspond to custom data attributes attached to the element. These can also be defined in SVG using attributes of the form data-<em>, where </em> is the key name for the pair. This works just like HTML’s HTMLElement.dataset property and HTML’s data-* global attribute.    </p>
+</blockquote>
+<p>“DOMStringMap”对象, 是元素自定义属性( custom data attributes )的键值对列表 .在 SVG 中通过使用SVGAttr(“data-<em>“)属性, </em> 是键名. 与HTML的 “HTMLElement.dataset” 属性以及 HTML的 data-* 全局属性类似</p>
+<h3 id="SVGElement-id-只读"><a href="#SVGElement-id-只读" class="headerlink" title="SVGElement.id (只读)"></a>SVGElement.id (只读)</h3><blockquote>
+<p>A DOMString representing the value of the id attribute on the given element, or the empty string if id is not present.    </p>
+</blockquote>
+<p>DOMString, 表示一个元素的 id 属性的值. 若 id 不存在, 则该值为空</p>
+<h3 id="SVGElement-xmlbase-只读"><a href="#SVGElement-xmlbase-只读" class="headerlink" title="SVGElement.xmlbase (只读)"></a>SVGElement.xmlbase (只读)</h3><blockquote>
+<p>A DOMString corresponding to the xml:base attribute on the given element.     </p>
+</blockquote>
+<p>DOMString, 与xml:base属性相对应.</p>
+<h3 id="SVGElement-ownerSVGElement-只读"><a href="#SVGElement-ownerSVGElement-只读" class="headerlink" title="SVGElement.ownerSVGElement (只读)"></a>SVGElement.ownerSVGElement (只读)</h3><blockquote>
+<p>An SVGSVGElement referring to the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.    </svg></svg></p>
+</blockquote>
+<p>SVGSVGElement, 指向最近的<svg>祖先元素, 如果给定元素是最外层的<svg>, 则返回null</svg></svg></p>
+<h3 id="SVGElement-viewportElement-只读"><a href="#SVGElement-viewportElement-只读" class="headerlink" title="SVGElement.viewportElement (只读)"></a>SVGElement.viewportElement (只读)</h3><blockquote>
+<p>The SVGElement, which established the current viewport. Often, the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.     </svg></svg></p>
+</blockquote>
+<p>SVGElement, 当前视窗(viewport) 建立的 SVGElement, 通常是最近的<svg>祖先元素, 如果给定元素是最外层的<svg>, 则返回null</svg></svg></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<p>The SVGElement interface doesn’t provide any additional methods, but inherits methods from its parent, Element.   </p>
+</blockquote>
+<p>SVGElement 接口没有提供额外方法, 只继承自 Element 的方法</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
