@@ -1,0 +1,716 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 4 | Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/webstorm添加多个项目到当前工程目录/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/webstorm添加多个项目到当前工程目录/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.623Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="WebStorm添加多个项目到当前工程目录"><a href="#WebStorm添加多个项目到当前工程目录" class="headerlink" title="WebStorm添加多个项目到当前工程目录"></a>WebStorm添加多个项目到当前工程目录</h1><p>File－&gt; Settings －&gt; Directories －&gt; Add Content Root，选择你要加入的Project </p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/spring-security添加登录入口(二开)/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/spring-security添加登录入口(二开)/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.616Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="spring-security添加登录入口"><a href="#spring-security添加登录入口" class="headerlink" title="spring-security添加登录入口"></a>spring-security添加登录入口</h1><h2 id="一-步骤"><a href="#一-步骤" class="headerlink" title="一. 步骤"></a>一. 步骤</h2><h3 id="1-在web-xml里添加"><a href="#1-在web-xml里添加" class="headerlink" title="1. 在web.xml里添加"></a>1. 在web.xml里添加</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>springSecurityFilterChain<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/card<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-在app-security里添加"><a href="#2-在app-security里添加" class="headerlink" title="2. 在app-security里添加"></a>2. 在app-security里添加</h3><h4 id="2-1-理论上放在哪里都行-不必须被包含在哪些节点之下-但和原来的定义登录的部分放在一起比较好"><a href="#2-1-理论上放在哪里都行-不必须被包含在哪些节点之下-但和原来的定义登录的部分放在一起比较好" class="headerlink" title="2.1 (理论上放在哪里都行, 不必须被包含在哪些节点之下.但和原来的定义登录的部分放在一起比较好)"></a>2.1 (理论上放在哪里都行, 不必须被包含在哪些节点之下.但和原来的定义登录的部分放在一起比较好)</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cardLoginEntry"</span> <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.RequestUriDirectUrlResolver"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"pattern"</span> <span class="attr">value</span>=<span class="string">"/card"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"directUrl"</span> <span class="attr">value</span>=<span class="string">"/cardLogin.jsp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>id</code>随意写, <code>class</code>照抄, <code>pattern</code>为请求的url以上配置对应如:<code>localhost/card</code>— (<code>localhost</code>)为根目录</p>
+<p><code>directUrl</code>对应的是<code>jsp</code>存放的位置, 也可以是html文件</p>
+<h4 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h4><p>在<code>&lt;bean id=&quot;multipleAuthenticationLoginEntry&quot;</code>的 <code>list</code>里添加<code>&lt;ref bean=&quot;cardLoginEntry&quot; /&gt;</code> 其中<code>cardLoginEntry</code> 对应上一步里随意起的<code>id</code>值</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipleAuthenticationLoginEntry"</span>    <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.MultipleAuthenticationLoginEntry"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultLoginUrl"</span> <span class="attr">value</span>=<span class="string">"/login.jsp"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"directUrlResolvers"</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"mobileLoginEntry"</span>/&gt;</span> </span><br><span class="line">            <span class="comment">&lt;!-- add by sun 2017-04-25 手机端 --&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"weixinLoginEntry"</span>/&gt;</span> </span><br><span class="line">            <span class="comment">&lt;!-- add by sun 2017-04-25 手机端 end--&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">&lt;!-- add by gjj 2018-3-22 触摸屏 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"cardLoginEntry"</span> /&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- add by gjj 2018-3-22 触摸屏 end --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>添加不拦截的页面, 还是在app-security, 添加一个value, 即: <code>&lt;value&gt;/cardLogin.jsp&lt;/value&gt;</code>和 <code>&lt;value&gt;/card/login.ws&lt;/value&gt;</code><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"securityMetadataSource"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.WsSecurityMetadataSource"</span> <span class="attr">scope</span>=<span class="string">"singleton"</span> &gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"anonymousUrls"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>/mobileLogin.jsp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>/mobileLogin.ws<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="二-分析原理"><a href="#二-分析原理" class="headerlink" title="二. 分析原理"></a>二. 分析原理</h2><ol>
+<li><p>web.xml添加过滤器, 个人理解就是输入的路由得走进spring-security</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>springSecurityFilterChain<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/card<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>app-security(在spring的配置文件引入的, spring的配置文件是在web.xml中引入的)<br>这个xml中观察代码发现是自定义的过滤器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--登录入口定义--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipleAuthenticationLoginEntry"</span>    <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.MultipleAuthenticationLoginEntry"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultLoginUrl"</span> <span class="attr">value</span>=<span class="string">"/login.jsp"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"directUrlResolvers"</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"mobileLoginEntry"</span>/&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"weixinLoginEntry"</span>/&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"cardLoginEntry"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>处理的类是<code>com.wsframe.platform.web.filter.MultipleAuthenticationLoginEntry</code><br>代码有<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;DirectUrlResolver&gt; directUrlResolvers = <span class="keyword">new</span> ArrayList&lt;DirectUrlResolver&gt;(); </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commence</span><span class="params">(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;  </span><br><span class="line">    </span><br><span class="line">    String ctxPath = request.getContextPath();</span><br><span class="line">    <span class="keyword">for</span> (DirectUrlResolver directUrlResolver : directUrlResolvers) &#123;  </span><br><span class="line">        <span class="keyword">if</span> (directUrlResolver.support(request)) &#123;  </span><br><span class="line">            String loginUrl = directUrlResolver.directUrl();  </span><br><span class="line">            response.sendRedirect(ctxPath+ loginUrl);  </span><br><span class="line">            <span class="keyword">return</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    response.sendRedirect(ctxPath+defaultLoginUrl);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而DirectUrlResolver的实现是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestUriDirectUrlResolver</span> <span class="keyword">extends</span> <span class="title">AbstractDirectUrlResolver</span> </span>&#123;  </span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 获得跳转路径里的标识</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">support</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">        String requestURI = request.getRequestURI();  </span><br><span class="line">        <span class="keyword">return</span> requestURI.contains(<span class="keyword">this</span>.pattern);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p>在xml中注册了之后, 一个url进来以后, 大致经历这几个文件  </p>
+<blockquote>
+<p>web.xml -&gt; app.content.xml -&gt; app-security.xml<br>-&gt; 过滤器 MultipleAuthenticationLoginEntry -&gt; RequestUriDirectUrlResolver的support方法</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>web.xml</td>
+<td>配置url的过滤器, 符合规则则将其交给spring , -&gt; spring security处理</td>
+</tr>
+<tr>
+<td>app-security</td>
+<td>配置了自定义的过滤器, 即: MultipleAuthenticationLoginEntry</td>
+</tr>
+<tr>
+<td>MultipleAuthenticationLoginEntry</td>
+<td>接收到url的request请求, 循环遍历RequestUriDirectUrlResolver的数组调用每个RequestUriDirectUrlResolver对象的support方法(即app-security中注册的). 如果请求在其中的某个对象中, 则允许跳转</td>
+</tr>
+<tr>
+<td>RequestUriDirectUrlResolver</td>
+<td>读取url的request请求, 与pattern(app-security中配置的pattern属性)比对, 如果存在则返回给过滤器: true -&gt; 过滤器跳转</td>
+</tr>
+</tbody>
+</table>
+<p>下面这段代码: app-security<br>第二个bean的id对应 上面<code>&lt;ref bean=&quot;cardLoginEntry&quot; /&gt;</code> 即将RequestUriDirectUrlResolver格式的匹配字典关联到了过滤器(MultipleAuthenticationLoginEntry)上<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipleAuthenticationLoginEntry"</span>    <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.MultipleAuthenticationLoginEntry"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultLoginUrl"</span> <span class="attr">value</span>=<span class="string">"/login.jsp"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"directUrlResolvers"</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"cardLoginEntry"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cardLoginEntry"</span> <span class="attr">class</span>=<span class="string">"com.wsframe.platform.web.filter.RequestUriDirectUrlResolver"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"pattern"</span> <span class="attr">value</span>=<span class="string">"/card"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"directUrl"</span> <span class="attr">value</span>=<span class="string">"/cardLogin.jsp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/sheme/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/sheme/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.613Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>#scheme</p>
+<h2 id="安装下载-windows"><a href="#安装下载-windows" class="headerlink" title="安装下载(windows)"></a>安装下载(windows)</h2><ol>
+<li>官网<br><a href="http://www.gnu.org/software/mit-scheme/" target="_blank" rel="noopener">http://www.gnu.org/software/mit-scheme/</a></li>
+<li>桌面的快捷方式默认打开edwin</li>
+<li>按<code>Ctrl + x</code>, 然后 <code>z</code>进入另一个解释器  </li>
+<li>若只想点击快捷方式进入repl，把快捷方式的属性中的目标的最后参数–edit去掉即可</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/mave笔记/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/mave笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.609Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="maven-笔记"><a href="#maven-笔记" class="headerlink" title="maven 笔记"></a>maven 笔记</h1><h2 id="一-使用层面清单"><a href="#一-使用层面清单" class="headerlink" title="一. 使用层面清单"></a>一. 使用层面清单</h2><ol>
+<li>下载配置</li>
+<li>创建maven项目</li>
+<li>eclipse maven</li>
+<li>pom.xml添加包和手动添加依赖(src\lib)</li>
+<li>创建与导入</li>
+<li>IDEA maven</li>
+</ol>
+<h2 id="二-理解层面"><a href="#二-理解层面" class="headerlink" title="二. 理解层面"></a>二. 理解层面</h2><h3 id="1-工程目录"><a href="#1-工程目录" class="headerlink" title="(1). 工程目录"></a>(1). 工程目录</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source code</td>
+<td>/src/main/java</td>
+</tr>
+<tr>
+<td>resources</td>
+<td>/src/main/resources</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>/src/test</td>
+</tr>
+<tr>
+<td>Complied byte code</td>
+<td>/target</td>
+</tr>
+<tr>
+<td>distributable JAR</td>
+<td>/targer/classes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。"><a href="#groupId-工作组-artifactId-版本-在仓库中这些属性是工程的唯一标识。" class="headerlink" title="groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。"></a>groupId: 工作组, artifactId: 版本. 在仓库中这些属性是工程的唯一标识。</h3><h3 id="2-生命周期"><a href="#2-生命周期" class="headerlink" title="(2). 生命周期"></a>(2). 生命周期</h3><p>clean, default, site – 相互独立的</p>
+<h4 id="clean-移除所有上一次构建生成的文件"><a href="#clean-移除所有上一次构建生成的文件" class="headerlink" title="clean 移除所有上一次构建生成的文件"></a>clean 移除所有上一次构建生成的文件</h4><ol>
+<li>pre 生命周期</li>
+<li>生命周期</li>
+<li>post 生命周期  </li>
+</ol>
+<p>运行post 生命周期名 会执行1, 2, 3步</p>
+<h4 id="site-生成项目站点文档并部署到特定的服务器上"><a href="#site-生成项目站点文档并部署到特定的服务器上" class="headerlink" title="site 生成项目站点文档并部署到特定的服务器上"></a>site 生成项目站点文档并部署到特定的服务器上</h4><h3 id="3-仓库"><a href="#3-仓库" class="headerlink" title="(3). 仓库"></a>(3). 仓库</h3><ol>
+<li>本地仓库</li>
+<li>中央仓库 (maven社区管理的常用库)</li>
+<li>远程仓库<br>顺序 : 本地 -&gt; 中央 -&gt; 远程</li>
+</ol>
+<h3 id="4-插件"><a href="#4-插件" class="headerlink" title="(4). 插件"></a>(4). 插件</h3><p>Maven 实际上是一个依赖插件执行的框架, 插件主要用途</p>
+<ul>
+<li>创建 jar 文件</li>
+<li>创建 war 文件</li>
+<li>编译代码文件</li>
+<li>代码单元测试</li>
+<li>创建工程文档</li>
+<li>创建工程报告<br>在pom.xml用法<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-antrun-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">id</span>&gt;</span>id.clean<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">phase</span>&gt;</span>clean<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>run<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">tasks</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">echo</span>&gt;</span>clean phase<span class="tag">&lt;/<span class="name">echo</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">tasks</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">execution</span>&gt;</span>     </span><br><span class="line">                <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-创建工程"><a href="#5-创建工程" class="headerlink" title="(5). 创建工程"></a>(5). 创建工程</h3><p>Maven 使用原型（archetype）插件创建工程。要创建一个简单的 Java 应用，我们将使用 maven-archetype-quickstart 插件。  </p>
+<h3 id="6-pom-xml解释"><a href="#6-pom-xml解释" class="headerlink" title="(6). pom.xml解释"></a>(6). pom.xml解释</h3><h4 id=""><a href="#" class="headerlink" title=""></a><dependency></dependency></h4><ul>
+<li>外部依赖（library jar location）能够像其他依赖一样在 pom.xml 中配置。<br>指定 groupId 为 library 的名称。 <code>&lt;groupId&gt;junit&lt;/groupId&gt;</code><br>指定 artifactId 为 library 的名称。   <code>&lt;artifactId&gt;junit&lt;/artifactId&gt;</code><br>指定作用域（scope）为系统。 <code>&lt;scope&gt;system&lt;/scope&gt;</code>, <code>&lt;scope&gt;test&lt;/scope&gt;</code><br>指定相对于工程位置的系统路径。 <code>&lt;systemPath&gt;${basedir}\src\lib\ldapjdk.jar&lt;/systemPath&gt;</code></li>
+</ul>
+<h4 id="工程文档-mvn-site"><a href="#工程文档-mvn-site" class="headerlink" title="工程文档 mvn site"></a>工程文档 <code>mvn site</code></h4><h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/maven-eclipse中html页面乱码/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/maven-eclipse中html页面乱码/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.599Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="maven-eclipse-中index-html页面乱码"><a href="#maven-eclipse-中index-html页面乱码" class="headerlink" title="maven-eclipse 中index.html页面乱码:"></a>maven-eclipse 中index.html页面乱码:</h1><p>pox.xml修改:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">argLine</span>&gt;</span>-Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/Markdownwin10安装及破解/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/Markdownwin10安装及破解/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.586Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="MarkdownPad-win10安装及破解"><a href="#MarkdownPad-win10安装及破解" class="headerlink" title="MarkdownPad win10安装及破解"></a>MarkdownPad win10安装及破解</h1><p>###Step1. 解压MarkdownPad2<br><a href="https://pan.baidu.com/s/1eSKXqka" target="_blank" rel="noopener">资源地址</a><br><a href="https://pan.baidu.com/s/1nwwg8sT" target="_blank" rel="noopener">我的网盘备用地址</a></p>
+<p>###Step2. 绿色软件, 解压并运行输入注册码<br>Email:<br><a href="mailto:Soar360@live.com" target="_blank" rel="noopener">Soar360@live.com</a><br>key:<br>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==</p>
+<p>###Step3. win10 需要安装组件awesomium_v1.6.6_sdk_win(下载后运行安装程序)<br><a href="https://pan.baidu.com/s/1qY7LKba" target="_blank" rel="noopener">下载地址</a><br><a href="">我的网盘备用地址</a></p>
+<p>###Step4. 汉化: tools -&gt; options 修改</p>
+<p>###Step5. 重启安装成功</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/markdownpad破解说明(1)/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/markdownpad破解说明(1)/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.582Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="MarkdownPad-专业版汉化激活教程"><a href="#MarkdownPad-专业版汉化激活教程" class="headerlink" title="MarkdownPad 专业版汉化激活教程"></a>MarkdownPad 专业版汉化激活教程</h1><p><a href="http://pan.baidu.com/s/1mgjvk9q" target="_blank" rel="noopener">百度网盘</a></p>
+<ol>
+<li>解压压缩包, 解压Pa_ttrar.rar激活工具</li>
+<li>patch -&gt; YES</li>
+<li><p>选择文件: 找到</p>
+<pre><code>C:\Users\Administrator\AppData\Local\MarkdownPad 2
+</code></pre><p>目录下的<code>markdownpad2.log</code>文件</p>
+</li>
+<li>破解成功</li>
+<li>汉化: 工具 -&gt; 选项 -&gt; 中文</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/ligerui弹出窗/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/ligerui弹出窗/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.579Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ligerDialog.confirm(<span class="string">" 验证成功 "</span>+<span class="string">",是否继续操作"</span>,<span class="string">"提示信息"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">rtn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(rtn)&#123;</span><br><span class="line">        <span class="keyword">this</span>.close();</span><br><span class="line">        <span class="comment">// window.location.reload();</span></span><br><span class="line">        <span class="comment">// window.location.href = window.location.href;</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = <span class="string">"$&#123;ctx&#125;/platform/system/sysUser/list.ws"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ligerDialog.alert(<span class="string">'验证失败'</span>,<span class="string">'出错了'</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js实时显示当前时间(格式化)/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js实时显示当前时间(格式化)/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.575Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"clock"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">initArray</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.length=initArray.arguments.length</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>[i+<span class="number">1</span>]=initArray.arguments[i]</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> d=<span class="keyword">new</span> initArray(<span class="string">"星期日"</span>,<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>,<span class="string">"星期四"</span>,<span class="string">"星期五"</span>,<span class="string">"星期六"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> setClock = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(0);</span></span></span><br><span class="line"><span class="javascript">            today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> hours = today.getHours();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> minutes = today.getMinutes();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> seconds = today.getSeconds();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (hours &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                hours = <span class="string">"0"</span> + hours;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (minutes &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                minutes = <span class="string">"0"</span> + minutes;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (seconds &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="number">1</span>);</span></span><br><span class="line"><span class="javascript">                seconds = <span class="string">"0"</span> + seconds;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(seconds);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            month = today.getMonth() + 1;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> time = today.getFullYear()</span></span><br><span class="line"><span class="javascript">                + <span class="string">"-"</span>+ month</span></span><br><span class="line"><span class="javascript">                + <span class="string">"-"</span> + today.getDate() + <span class="string">" "</span></span></span><br><span class="line"><span class="javascript">                + d[today.getDay()+<span class="number">1</span>] + <span class="string">" "</span></span></span><br><span class="line"><span class="javascript">                + hours + <span class="string">" : "</span></span></span><br><span class="line"><span class="javascript">                + minutes + <span class="string">" : "</span></span></span><br><span class="line"><span class="undefined">                + seconds;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'clock'</span>).innerHTML = time;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(time);</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// console.log(new Date());</span></span></span><br><span class="line"><span class="javascript">            today = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">            time = <span class="literal">null</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        setClock();</span></span><br><span class="line"><span class="undefined">        setInterval(setClock, 1000);</span></span><br><span class="line"><span class="undefined">    &#125;)();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/05/02/js模拟键盘开发笔记/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js模拟键盘开发笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.568Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="js模拟键盘开发笔记"><a href="#js模拟键盘开发笔记" class="headerlink" title="js模拟键盘开发笔记"></a>js模拟键盘开发笔记</h1><h2 id="一-实现方式"><a href="#一-实现方式" class="headerlink" title="(一). 实现方式"></a>(一). 实现方式</h2><h3 id="一-页面显示"><a href="#一-页面显示" class="headerlink" title="一. 页面显示"></a>一. 页面显示</h3><h4 id="整体-一个-ul-列表-每个-li-是键盘上一个键"><a href="#整体-一个-ul-列表-每个-li-是键盘上一个键" class="headerlink" title="整体: 一个 ul 列表. 每个 li 是键盘上一个键"></a>整体: 一个 <code>ul</code> 列表. 每个 <code>li</code> 是键盘上一个键</h4><h4 id="键盘分类-三种"><a href="#键盘分类-三种" class="headerlink" title="键盘分类-三种:"></a>键盘分类-三种:</h4><ol>
+<li>可以 <code>shift</code> 的(如 <code>1</code> 和 <code>!</code> 等数字符号键)</li>
+<li>字母键</li>
+<li>功能键(回车, 空格, 退格, <code>capslock</code> 等)</li>
+</ol>
+<h4 id="键盘布局方式"><a href="#键盘布局方式" class="headerlink" title="键盘布局方式"></a>键盘布局方式</h4><p>可以使用浮动或 <code>flex</code>, 设定总体宽度, 然后单独设定特殊长度的键宽度, 元素自动换行.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"keyboard"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"delete lastitem"</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"tab"</span>&gt;</span>tab<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"letter"</span>&gt;</span>q<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"capslock"</span>&gt;</span>caps lock<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"return lastitem"</span>&gt;</span>return<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"left-shift"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"right-shift lastitem"</span>&gt;</span>shift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"space lastitem"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="二-js-功能"><a href="#二-js-功能" class="headerlink" title="二. js 功能"></a>二. js 功能</h3><p>js 功能分为: </p>
+<ul>
+<li>设置事件监听(键盘点击, 文本框焦点)</li>
+<li>特殊功能键的实现: <code>CapsLock</code> , <code>Shift</code> - 恢复 <code>Shift</code> , <code>delete</code> (退格), <code>Space</code> (空格)</li>
+<li>字母-大写字母, 数字-特殊符号向表单文本框回写<h4 id="1-Caps-Lock-功能实现"><a href="#1-Caps-Lock-功能实现" class="headerlink" title="1. Caps Lock 功能实现"></a>1. <code>Caps Lock</code> 功能实现</h4>css 字母键增加一个大写类<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.uppercase</span> &#123;<span class="attribute">text-transform</span>: uppercase;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>js 切换<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.letter'</span>).toggleClass(<span class="string">'uppercase'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-shift-键功能实现"><a href="#2-shift-键功能实现" class="headerlink" title="2. shift 键功能实现"></a>2. <code>shift</code> 键功能实现</h4><ul>
+<li>实现大写功能-键盘显示大写字母(见上一条)</li>
+<li>实现上档功能-键盘显示数字键代表的符号等  </li>
+</ul>
+<p>html代码:<br><figure class="highlight xhtml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"symbol"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"off"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"on"</span>&gt;</span>!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css 代码:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.on</span> &#123;<span class="attribute">display</span>: none;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.symbol span'</span>).toggle();</span><br></pre></td></tr></table></figure>
+<p>补充说明:<br><code>toggle()</code> 是 <code>jQuery</code>函数, 切换显示和隐藏.</p>
+<h4 id="3-delete-退格-实现"><a href="#3-delete-退格-实现" class="headerlink" title="3. delete (退格) 实现"></a>3. <code>delete</code> (退格) 实现</h4><ul>
+<li>获取文本框内容</li>
+<li>substr截取: <code>html.substr(0, html.length - 1)</code></li>
+<li>回写文本框</li>
+</ul>
+<h4 id="4-特殊字符"><a href="#4-特殊字符" class="headerlink" title="4. 特殊字符"></a>4. 特殊字符</h4><p>标点, 空格, 回车, 制表符<br>标点: <code>character = $(&#39;span:visible&#39;, $this).html();</code><br>回车/制表/空格: <code>character = &quot;\n&quot;;</code>   </p>
+<h2 id="二-笔记"><a href="#二-笔记" class="headerlink" title="(二). 笔记"></a>(二). 笔记</h2><h3 id="1-焦点事件"><a href="#1-焦点事件" class="headerlink" title="1. 焦点事件"></a>1. 焦点事件</h3><p>两个文本框, 想判断当前焦点是哪个  </p>
+<ul>
+<li>事件对象: <code>document.activeElement</code>  </li>
+<li>监听文本框失去焦点和获取焦点事件, 判断  </li>
+</ul>
+<p>代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line"><span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">    input_element_id = current_focus_id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>遇到问题: 发现无法获取当前焦点, 猜测:<br>A失去焦点, B获得焦点. 两个动作是同时发生的, 但监听A失去焦点时, B并未获得焦点<br>解决办法:<br>添加定时器, 延期0秒执行(则B获得焦点, 代码如下: )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">    <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">        input_element_id = current_focus_id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 2. 用`</span>jquery<span class="string">`的`</span>delegate<span class="string">`添加事件</span></span><br><span class="line"><span class="string">&gt; 指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。   </span></span><br><span class="line"><span class="string">&gt; 使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">代码:   </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">$(<span class="string">'.login'</span>).delegate(<span class="string">"*"</span>, <span class="string">"focus blur"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">     setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> current_focus_id = <span class="built_in">document</span>.activeElement.id;</span><br><span class="line">        <span class="keyword">if</span> (current_focus_id &amp;&amp; current_focus_id.toUpperCase() == <span class="string">'USERNAME'</span> || current_focus_id.toUpperCase() == <span class="string">'PASSWORD'</span>)&#123;</span><br><span class="line">            input_element_id = current_focus_id;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>猜测实现:    </p>
+<ul>
+<li>遍历指定元素的所有符合选择器的元素, </li>
+<li>为他们添加事件监听</li>
+<li>绑定事件触发时执行的函数</li>
+</ul>
+<h3 id="3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写"><a href="#3-css-样式设置为-text-transform-uppercase-时-显示的值为大写-但实际值-如-innerHTML-value-仍为小写" class="headerlink" title="3. css 样式设置为: text-transform: uppercase 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写"></a>3. css 样式设置为: <code>text-transform: uppercase</code> 时, 显示的值为大写, 但实际值(如 innerHTML / value ) 仍为小写</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/3/" class="pagination-prev">Prev</a>
+  
+  
+  <a href="/page/5/" class="pagination-next">Next</a>
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

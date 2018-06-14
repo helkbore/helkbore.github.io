@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="isNaN1234567891011121314console.log(isNaN(NaN));    //NaN就是Not-A-Numberconsole.log(isNaN(undefined));//undefined什么都不是，当然也Not-A-Number.console.log(isNa">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/js数据类型/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:35.566Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>));    <span class="comment">//NaN就是Not-A-Number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">undefined</span>));<span class="comment">//undefined什么都不是，当然也Not-A-Number.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">null</span>));<span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">""</span>));  <span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(&#123;&#125;));  <span class="comment">// 相当于undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>([]));  <span class="comment">// 能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Object</span>()));  <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">String</span>()));  <span class="comment">//能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"a"</span>))); <span class="comment">//转成字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Array</span>()));  <span class="comment">//能转成0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Date</span>()));  <span class="comment">//能转成数字</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().toString()));  <span class="comment">//转成字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">true</span>));<span class="comment">//能转成1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">0</span>/<span class="number">0</span>)); <span class="comment">//结果就是NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="isFinite"><a href="#isFinite" class="headerlink" title="isFinite"></a>isFinite</h2><h2 id="轮子-判断对象类型"><a href="#轮子-判断对象类型" class="headerlink" title="轮子, 判断对象类型"></a>轮子, 判断对象类型</h2><p>最后一句似懂非懂啊<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">o, type</span>) </span>&#123;</span><br><span class="line">            type = Str.prototype.toLowerCase.call(type);</span><br><span class="line">	<span class="keyword">if</span> (type == <span class="string">"finite"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">isFinite</span>(o);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (type == <span class="string">"array"</span> &amp;&amp;</span><br><span class="line">		(o <span class="keyword">instanceof</span> <span class="built_in">Array</span> || <span class="built_in">Array</span>.isArray &amp;&amp; <span class="built_in">Array</span>.isArray(o))) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>  type == <span class="string">"null"</span> &amp;&amp; o === <span class="literal">null</span> ||</span><br><span class="line">		type == <span class="keyword">typeof</span> o &amp;&amp; o !== <span class="literal">null</span> ||</span><br><span class="line">		type == <span class="string">"object"</span> &amp;&amp; o === <span class="built_in">Object</span>(o) ||</span><br><span class="line">		<span class="built_in">Object</span>.prototype.toString.call(o).slice(<span class="number">8</span>, <span class="number">-1</span>).toLowerCase() == type;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

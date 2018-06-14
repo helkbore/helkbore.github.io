@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Whellote</title>
+
+  
+  <meta name="author" content="whellote">
+  
+
+  
+  <meta name="description" content="IDEA配置jdk-tomcat-web项目-servlet
+简洁版顺序
+破解idea
+原始窗口 configure -&amp;gt; project defaults -&amp;gt; Project Struture
+原始窗口 configure -&amp;gt; settings -&amp;gt; Build, Ex">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Whellote"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Whellote" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Whellote</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span></span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/02/IDEA配置jdk-tomcat-web项目-servlet/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-02T04:19:08.458Z">
+          2018-05-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="IDEA配置jdk-tomcat-web项目-servlet"><a href="#IDEA配置jdk-tomcat-web项目-servlet" class="headerlink" title="IDEA配置jdk-tomcat-web项目-servlet"></a>IDEA配置jdk-tomcat-web项目-servlet</h1><hr>
+<h2 id="简洁版顺序"><a href="#简洁版顺序" class="headerlink" title="简洁版顺序"></a>简洁版顺序</h2><ol>
+<li>破解idea</li>
+<li>原始窗口 configure -&gt; project defaults -&gt; Project Struture</li>
+<li>原始窗口 configure -&gt; settings -&gt; Build, Execution, Deployment -&gt; Application Servers</li>
+<li>新建project -&gt; 空project(选择jdk和project language level 为8) -&gt; 新建module 勾选web application -&gt; OK</li>
+<li>Project Struture -&gt; facts -&gt; 添加web.xml 注意修改WEB-INF的路径保存</li>
+<li>在文档结构里, WEB-INF下建classes和lib文件夹</li>
+<li>在Project Struture -&gt; module -&gt; paths中将 User module compile output path 都设为classes目录</li>
+<li>在Project Struture -&gt; module -&gt; dependencies -&gt; 选jdk, 右边加号 -&gt; 第一个 JARS or directories 确定后选 Jar Directory</li>
+<li>因为是web项目所以也在这个界面添加 roject Struture -&gt; module -&gt; dependencies -&gt; +号 -&gt; Libraries -&gt; tomcat</li>
+<li>配置tomcat: run -&gt; edit configurations -&gt; +号 -&gt; tomcat server -&gt; local -&gt; 给服务器命个名tomcat8.0.32 -&gt; 下边tomcat server settings 里勾选 deploy applications configured in Tomcat instance 和 Preserve sessions across restarts and redeploys</li>
+<li>部署tomcat run -&gt; edit configurations -&gt; deployment -&gt; +号 -&gt; Artifacts -&gt; 右边 application context 写上 /module名, 我的是 /MyTest</li>
+<li>修改index.jsp并运行</li>
+<li>在src下建包建servlet, 打开该文件, 在doGet方法里添加 <code>response.sendRedirect(&quot;error.jsp&quot;);</code></li>
+<li>在web目录下建一个error.jsp并编辑</li>
+<li><p>修改web.xml配置servlet</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"3.1"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>TestServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>test.web.TestServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>TestServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/test<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译运行 地址为: localhost:8080/Module名/url-pattern中的地址<br>我这里对应的就是: localhost:8080/MyTest/test</p>
+</li>
+</ol>
+<hr>
+<h2 id="激活IDEA-见另一个文档"><a href="#激活IDEA-见另一个文档" class="headerlink" title="激活IDEA(见另一个文档)"></a>激活IDEA(见另一个文档)</h2><h2 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h2><ol>
+<li>选择configure -&gt; project defaults -&gt; Project Struture(或者编辑器界面的file-&gt; project struture)<br><img src="img/1.png" alt="1"></li>
+<li>点击sdks -&gt; 中间栏 加号, 选JDK </li>
+<li>弹出一个对话框，让你去选择JDK安装的路径，选择好自己安装的JDK路径，点击OK即可。<br><img src="img/2.png" alt="1"></li>
+</ol>
+<h2 id="配置tomcat-可跳过-建完项目弄"><a href="#配置tomcat-可跳过-建完项目弄" class="headerlink" title="配置tomcat(可跳过, 建完项目弄)"></a>配置tomcat(可跳过, 建完项目弄)</h2><ol>
+<li>原始界面(图1)中的configure -&gt; settings -&gt; Build, Execution, Deployment -&gt; Application Servers</li>
+<li>点击中间栏的加号</li>
+<li>在tomcat Home中选择安装好的tomcat -&gt; OK</li>
+</ol>
+<h2 id="创建web项目方法1"><a href="#创建web项目方法1" class="headerlink" title="创建web项目方法1"></a>创建web项目方法1</h2><ol>
+<li>create new project (如果是编辑器界面则是: file -&gt; new project)</li>
+<li>左边选择java, 右边project sdk选择对应的jdk, 下面点<br><img src="img/5.png" alt="1"></li>
+<li>(此种方法也可以不建module,将project当做module用了)右键点击项目-&gt; new -&gt; module</li>
+<li>勾选web application<br><img src="img/3.png" alt="1"></li>
+</ol>
+<h2 id="创建web项目方法2"><a href="#创建web项目方法2" class="headerlink" title="创建web项目方法2"></a>创建web项目方法2</h2><ol>
+<li>create new project (如果是编辑器界面则是: file -&gt; new project)</li>
+<li>左边选择Empty project -&gt; next -&gt; finish</li>
+<li>建好project后会自动弹出一个建module的窗口</li>
+<li>中间栏加号 -&gt; new module -&gt; java ee 的web application<br><img src="img/3.png" alt="1"></li>
+<li>我的因为2017.3版本, 没法选择建web.xml和版本号要之后建</li>
+<li>输入module名(IDEA里module意思是模块, 放在同一个project下, project类似于一个文件夹吧. 集合相关的模块, 这些模块也比较独立, 可以对应eclipse里的项目了) -&gt; OK</li>
+</ol>
+<h3 id="打开project-structure的两种方法"><a href="#打开project-structure的两种方法" class="headerlink" title="打开project structure的两种方法:"></a>打开project structure的两种方法:</h3><ol>
+<li>File –&gt; Project Structure（快捷键ctrl+alt+shift+s）</li>
+<li>Navigation Bar中的Project Structure按钮<br><img src="img/7.png" alt="1"></li>
+<li>没有这个Navigation Bar可在View中勾选Navigation Bar</li>
+</ol>
+<h2 id="2017-3版本创建web项目无法自动生成web-xml"><a href="#2017-3版本创建web项目无法自动生成web-xml" class="headerlink" title="2017.3版本创建web项目无法自动生成web.xml"></a>2017.3版本创建web项目无法自动生成web.xml</h2><ol>
+<li>FILE -&gt; project struture -&gt; 左边选fects</li>
+<li>中间栏选中web(新建的module名) 右边deployment descriptors面板里 +号选择web.xml及版本. -&gt; OK</li>
+<li>注意: 选择web.xml的位置时将web-inf放入web目录下</li>
+</ol>
+<p><img src="img/4.png" alt="1"></p>
+<h2 id="idea文档结构"><a href="#idea文档结构" class="headerlink" title="idea文档结构"></a>idea文档结构</h2><ul>
+<li>idea文件夹和webapp.iml是IDEA自动创建的, 包含了工程和模块的配置数据</li>
+<li>.idea和.settings分别是intelliJ和eclipse的相关依赖</li>
+<li>build目录是class文件输出路径，这一点默认和eclipse是一样的。</li>
+<li>out目录是所谓artifact输出路径，即提供给tomcat的web程序目录，具体的web根目录就是下级的web_test_Web_explorded。</li>
+<li>src文件夹是源码目录</li>
+<li>web文件夹相当于eclipse创建的web工程WebContent文件夹，包含了WEB-INF/web.xml及index.jsp</li>
+<li>External Libraries包含了JDK及Tomcat带的jsp-api、servlet-api jar文件</li>
+</ul>
+<h2 id="完善工程目录"><a href="#完善工程目录" class="headerlink" title="完善工程目录"></a>完善工程目录</h2><ol>
+<li>(方法一)添加WEB-INF/lib目录(注意这时候web-inf和web还是平级的,一会改)<br>点击WEB-INF，右击New –&gt; Directory，directory name填写lib，拷贝项目所需的jar包到此目录，右击lib目录 –&gt; Add as Library<br><img src="img/6.png" alt="1"><br>这时会弹出Craete Library对话框，name填写lib即可，其它默认，点击OK确定<br>添加完成可在Project Structure中的Libraries中看到<br>注意：这种方法如果你不拷贝jar包到lib下，右击时是没有Add as Library选项的</li>
+<li>(方法二)打开Project Structure –&gt; libraries -&gt; 点击+选择java –&gt; 在弹出的Select Library Files中在WEB-INF下创建lib目录选择并点击OK –&gt; 在弹出的Choose Categories of Selected Files中选择Jar Directory点击OK –&gt; 在弹出的Choose Modules中点击OK</li>
+</ol>
+<h2 id="添加conf目录用于添加配置文件"><a href="#添加conf目录用于添加配置文件" class="headerlink" title="添加conf目录用于添加配置文件"></a>添加conf目录用于添加配置文件</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h3><ol>
+<li>右击项目New –&gt; Directory –&gt; directory name填写conf，点击OK –&gt; </li>
+<li>右击conf目录Mark Directory as –&gt; Sources Root</li>
+<li>这样创建的conf source folder在Project Structure的Modules中可以看到</li>
+</ol>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><ol>
+<li>在Project Structure的左边Modules中, 右边sources 右击项目 –&gt; New Folder –&gt; Folder </li>
+<li>name填conf，点击OK –&gt; </li>
+<li>右击新建的conf –&gt; Sources –&gt; 点击底部的OK</li>
+</ol>
+<h2 id="配置classes和lib"><a href="#配置classes和lib" class="headerlink" title="配置classes和lib"></a>配置classes和lib</h2><h3 id="在web-inf下建classes和lib"><a href="#在web-inf下建classes和lib" class="headerlink" title="在web-inf下建classes和lib"></a>在web-inf下建classes和lib</h3><h3 id="配置文件夹路径"><a href="#配置文件夹路径" class="headerlink" title="配置文件夹路径"></a>配置文件夹路径</h3><ol>
+<li>File -&gt; Project Structure (ctrl + shift + Alt + s) 或者使用工具栏的快捷键 -&gt; 选择Modules -&gt; 选择Paths -&gt; </li>
+<li>选择“Use module compile out path” -&gt; 将Outputpath 和Test output path 都设置为刚刚创建的classes文件夹</li>
+<li>选择当前窗口的Dependencies -&gt; 将Module SDK选择为1.6 -&gt;点击右边的 + 号 -&gt; 选择 “1 JARS or directories …”</li>
+<li>选择刚刚创建的lib文件夹 -&gt; OK</li>
+</ol>
+<h2 id="引入tomcat包-后面建servlet"><a href="#引入tomcat包-后面建servlet" class="headerlink" title="引入tomcat包(后面建servlet)"></a>引入tomcat包(后面建servlet)</h2><p>File -&gt; Project Structure -&gt; Modules -&gt; 选择当前窗口的Dependencies -&gt; +号 -&gt; tomcat</p>
+<h2 id="配置tomcat容器"><a href="#配置tomcat容器" class="headerlink" title="配置tomcat容器"></a>配置tomcat容器</h2><ol>
+<li>打开菜单Run -&gt; Edit Configurations…</li>
+<li>点击 “+” ，选择 “Tomcat Server” -&gt; 选择“Local”</li>
+<li>在Name出输入新的服务器名，点击 “Application Server” 后面的 “Configure…”，弹出Application Servers窗口，在Tomcat Home 选择本地安装的tomcat目录 -&gt; OK(如果前面已经配置了tomcat这步略)</li>
+<li>“Run/Debug Configurations”窗口中Name一栏输入服务器的名字tomcat7，在“Server”面板中，勾选取消“After Launch”，设置“HTTP port”和“JMX port”（默认值即可），</li>
+<li>端口旁边的deploy applications configured in Tomcat instance 和 Preserve sessions across restarts and redeploys勾选上</li>
+<li>点击Apply -&gt; OK，至此tomcat配置完毕（左边列表中tomcat图标上小红叉是未部署项目的提示，部署项目后就会消失）。</li>
+</ol>
+<h2 id="在tomcat上部署并运行项目"><a href="#在tomcat上部署并运行项目" class="headerlink" title="在tomcat上部署并运行项目"></a>在tomcat上部署并运行项目</h2><ol>
+<li>在创建好tomcat后，可以通过工具栏快速打开tomcat的配置页面：<br>也可以通过菜单栏：Run -&gt; Edit Configurations… -&gt;<br><img src="img/7.png" alt="1"></li>
+<li>选择刚创建的tomcat7 -&gt; 选择Deployment -&gt;点击右边的“ + ”号 -&gt; 选择 Artifact</li>
+<li>选择web项目 -&gt; Application Context可以填“/module名”(也可以不填) -&gt; Apply </li>
+<li>编辑index.jsp, 运行tomcat</li>
+</ol>
+<h2 id="建servlet"><a href="#建servlet" class="headerlink" title="建servlet"></a>建servlet</h2><ol>
+<li>右键src -&gt; new -&gt; servlet </li>
+<li>输入servlet名字, 包名</li>
+<li><p>打开servlet, 在doGet方法里写一个简单的跳转</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"error.jsp"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改web.xml. 在web-app里添加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"3.1"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>TestServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>test.web.TestServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>TestServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/test<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译运行 地址为: localhost:8080/Module名/url-pattern中的地址<br>我这里对应的就是: localhost:8080/MyTest/test</p>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 whellote
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
